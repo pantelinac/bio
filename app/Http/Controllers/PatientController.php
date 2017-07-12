@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Patient;
+use App\Examination;
 use Session;
 use Purifier;
 use DB;
+
 
 class PatientController extends Controller {
 
@@ -172,7 +174,12 @@ class PatientController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy($id) {
-        //
+        $patient = Patient::find($id);        
+        
+        $patient->delete();
+
+        Session::flash('success', 'Podaci pacijenta uspešno izbrisani!');
+        return redirect()->route('patient.index');
     }
 
     public function search_name(Request $request) {

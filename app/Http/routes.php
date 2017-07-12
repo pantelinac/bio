@@ -22,4 +22,4 @@ Route::resource('patient', 'PatientController');
 Route::post('search_name',['uses' => 'PatientController@search_name', 'as' => 'patient.search']);
 
 //CRUD examinations 
-Route::resource('examinations', 'ExaminationsController');
+Route::resource('examination', 'ExaminationController');

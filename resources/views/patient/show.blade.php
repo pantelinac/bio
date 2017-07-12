@@ -13,14 +13,14 @@
             {{$patient->name}} 
 
 
-            <a href="{{ route('patient.show', $patient->id) }}" 
+            <a href="{{ route('examination.create') }}" 
                class="btn btn-default btn-sm btn-info">OP</a>
 
             <a href="{{ route('patient.show', $patient->id) }}" 
-               class="btn btn-default btn-sm btn-info">CA1</a>
+               class="btn btn-default btn-sm btn-info">CA 1</a>
 
             <a href="{{ route('patient.show', $patient->id) }}" 
-               class="btn btn-default btn-sm btn-info">CA2</a>
+               class="btn btn-default btn-sm btn-info">CA 2</a>
         </h1>
         <hr>
     </div>
@@ -55,6 +55,14 @@
             <hr>
             Abortus:
             <hr>
+            <div class="col-md-2">
+            {{ Form::open(['route' => ['patient.destroy', $patient->id], 'method'=>'DELETE']) }}
+                {{ Form::submit('Delete', ['class'=>'btn btn-default btn-sm btn-danger']) }}
+            {{ Form::close() }}
+            </div>
+<!--            <h3><a href="{{ route('patient.destroy', $patient->id) }}" 
+               class="btn btn-default btn-sm btn-danger">Izbriši</a></h3>-->
+
         </div>
 
         <div class="col-md-7 h5">
@@ -86,50 +94,32 @@
             {{  $patient->abortion }}       
             <hr>
         </div>
-        <!--        <br>
-                Datum rodjenja: {{ $patient->date_of_birth    }} 
-                <br>
-                Adresa:         {{ $patient->address }}         
-                <br>
-                Mesto:          {{ $patient->place   }}         
-                <br>
-                Telefon:        {{ $patient->phone   }} 
-                <br>
-                Zanimanje:      {{ $patient->profession  }}     
-                <br>
-                Osetljivost na lekove:{{ $patient->drug_susceptibility}} 
-                <br>
-                Licna anamenta: {{ $patient->personal_anament   }}  
-                <br>
-                Porodicna anamenta:{{ $patient->family_anament}} 
-                <br>
-                PM:{{  $patient->date_last_period  }}
-                <br>
-                Krvna grupa:{{$patient->blood_type }}   
-                <br>
-                RH:{{ $patient->rh            }} 
-                <br>
-                Porodjaj:{{ $patient->childbirth     }} 
-                <br>
-                Abortus:{{  $patient->abortion }}       
-                <br>
-        -->
 
     </div>
 
     <div class="col-md-4">
-        <h2>Lista bolesti</h2>
+        <h2>Lista bolesti  <span class="badge">{{ $patient->examinations->count() }}</span></h2>
         <hr>
 
         <table class="table">
             <thead>
                 <tr>
-                    <th width="300px">Vrsta pregleda</th>
-                    <th>datum</th>
+                    <th width="300px">Datum</th>
+                    <th width="250px">Vrsta pregleda</th>                    
                     <th width="70px">-</th>
                 </tr>
             </thead>
-            <tbody></tbody></table>
+            <tbody>
+                @foreach($patient->examinations as $examination)
+                <tr>                    
+                    <td>{{ date('j M Y  G:i', strtotime($examination->created_at)) }}</td>
+                    <td><strong>{{ $examination->Exam_type }}</strong></td>
+                    <td><span class="glyphicon glyphicon-trash"></span></td>
+
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
 
     </div>
 
