@@ -65,21 +65,21 @@ class PatientController extends Controller {
         //store in the database
         $patient = new Patient;
 
-        $patient->name = $request->name;
-        $patient->date_of_birth = $request->date_of_birth;
-        $patient->address = $request->address;
-        $patient->place = $request->place;
-        $patient->phone = $request->phone;
-        $patient->profession = $request->profession;
+        $patient->name                = $request->name;
+        $patient->date_of_birth       = $request->date_of_birth;
+        $patient->address             = $request->address;
+        $patient->place               = $request->place;
+        $patient->phone               = $request->phone;
+        $patient->profession          = $request->profession;
         $patient->drug_susceptibility = $request->drug_susceptibility;
-        $patient->personal_anament = $request->personal_anament;
-        $patient->family_anament = $request->family_anament;
-        $patient->date_last_period = $request->date_last_period;
-        $patient->blood_type = $request->blood_type;
-        $patient->rh = $request->rh;
-        $patient->childbirth = $request->childbirth;
-        $patient->abortion = $request->abortion;
-        $patient->slug = $slug;
+        $patient->personal_anament    = $request->personal_anament;
+        $patient->family_anament      = $request->family_anament;
+        $patient->date_last_period    = $request->date_last_period;
+        $patient->blood_type          = $request->blood_type;
+        $patient->rh                  = $request->rh;
+        $patient->childbirth          = $request->childbirth;
+        $patient->abortion            = $request->abortion;
+        $patient->slug                = $slug;
 
         $patient->save();
 
