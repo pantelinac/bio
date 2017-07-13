@@ -35,7 +35,7 @@
 
         <form class="navbar-form navbar-left" action="search_name" method="post">
         <div class="form-group">
-            <input type="text" name="search_name" class="form-control" placeholder="Search">
+            <input type="text" name="search_name" class="form-control" placeholder="Pretraži po imenu">
             <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
         </div>
           

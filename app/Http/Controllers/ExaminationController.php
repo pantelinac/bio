@@ -68,7 +68,8 @@ class ExaminationController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function show($id) {
-        //
+        $examination = Examination::find($id);
+        return view('examination.show')->withExamination($examination);
     }
 
     /**
@@ -78,7 +79,14 @@ class ExaminationController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy($id) {
+        $examination = Examination::find($id);      
+        $patient_id = $examination->patient->id;
         
+        $examination->delete();
+        
+
+        Session::flash('success', 'Podaci pregleda uspešno izbrisani!');
+        return redirect()->route('patient.show', $patient_id);
     }
 
     /**

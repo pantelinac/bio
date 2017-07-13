@@ -36,6 +36,8 @@ Route::get('examination/{patient_id}/ca1/create', ['uses' => 'ExaminationControl
 Route::post('examination/{patient_id}/ca2',['uses' => 'ExaminationController@storeca2', 'as' => 'examination.storeca2']);
 Route::get('examination/{patient_id}/ca2/create', ['uses' => 'ExaminationController@createca2', 'as' => 'examination.createca2']);
 
+Route::delete('examination/{examination_id}', ['uses' => 'ExaminationController@destroy', 'as' => 'examination.destroy']);
+
 //Route::group(['prefix' => 'patient/{patient}'], function() {
 //
 //

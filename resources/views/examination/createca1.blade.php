@@ -12,7 +12,12 @@
 
 <div class="row">    
     <div class='col-md-8 col-md-offset-2'>
-        <h1>CA1 <small> za {{$patient->name}}</small></h1>
+        <h1>Ciljani Akušerski pregled 1 
+            <small> za <a href="{{ route('patient.show', $patient->id) }}" 
+               class="btn btn-default btn-sm btn-info">{{$patient->name}}</a>
+            </small>
+        </h1>
+        
         <hr>
        
         
@@ -92,7 +97,7 @@
             
             {{Form::label('FD', 'Dinamika pom ploda:')}}
             {{Form::text('FD', null, 
-            array('class'=>'form-control','required'=>'','maxlength'=>'255'))}}
+            array('class'=>'form-control form-spacing-boto','required'=>'','maxlength'=>'255'))}}
             
             
         </div>

@@ -12,14 +12,19 @@
 
 <div class="row">    
     <div class='col-md-8 col-md-offset-2'>
-        <h1>CA2 <small> za {{$patient->name}}</small></h1>
+        <h1>Ciljani Akušerski pregled 2 
+            <small> za <a href="{{ route('patient.show', $patient->id) }}" 
+               class="btn btn-default btn-sm btn-info">{{$patient->name}}</a>
+            </small>
+        </h1>
+        
         <hr>
 
 
         {!! Form::open(['route' => ['examination.storeca2',$patient],'data-parsley-validate' => '']) !!}
 <div class="col-md-12">
     <div class="col-md-3">
-        {{Form::label('Biometry', 'Biom ploda:')}}
+        {{Form::label('Biometry', 'Biometrija ploda:')}}
         {{Form::text('Biometry', null, 
             array('class'=>'form-control','required'=>'','numeric'=>''))}}    
 
@@ -45,7 +50,7 @@
 
         {{Form::label('Vp', 'Vp:')}}
         {{Form::text('Vp', null, 
-            array('class'=>'form-control','required'=>'','numeric'=>''))}}
+            array('class'=>'form-control form-spacing-boto','required'=>'','numeric'=>''))}}
     </div>
         <div class="col-md-3">
         {{Form::label('IOD', 'IOD:')}}

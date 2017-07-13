@@ -56,12 +56,12 @@
             Abortus:
             <hr>
             <div class="col-md-2">
-            {{ Form::open(['route' => ['patient.destroy', $patient->id], 'method'=>'DELETE']) }}
+                {{ Form::open(['route' => ['patient.destroy', $patient->id], 'method'=>'DELETE']) }}
                 {{ Form::submit('Delete', ['class'=>'btn btn-default btn-sm btn-danger']) }}
-            {{ Form::close() }}
+                {{ Form::close() }}
             </div>
-<!--            <h3><a href="{{ route('patient.destroy', $patient->id) }}" 
-               class="btn btn-default btn-sm btn-danger">Izbriši</a></h3>-->
+            <!--            <h3><a href="{{ route('patient.destroy', $patient->id) }}" 
+                           class="btn btn-default btn-sm btn-danger">Izbriši</a></h3>-->
 
         </div>
 
@@ -114,7 +114,32 @@
                 <tr>                    
                     <td>{{ date('j M Y  G:i', strtotime($examination->created_at)) }}</td>
                     <td><strong>{{ $examination->Exam_type }}</strong></td>
-                    <td><span class="glyphicon glyphicon-trash"></span></td>
+                    <td>
+
+                        {{ Form::open(['route' => ['examination.destroy', $examination->id], 'method'=>'DELETE']) }}
+                        {{ Form::submit('Delete', ['class'=>'btn btn-default btn-sm btn-danger']) }}
+                        {{ Form::close() }}
+
+                    </td>
+
+                    <!--                        
+                                            
+                                            <a href="{{ route('examination.destroy',$examination->id),['method'=>'DELETE'] }}" 
+                                   class="btn btn-default btn-sm btn-info"><span class="glyphicon glyphicon-trash"></span></a>
+                                            
+                                            
+                                            
+                                            {{ Form::open(['route' => ['patient.destroy', $patient->id], 'method'=>'DELETE']) }}
+                                    {{ Form::submit('Delete', ['class'=>'btn btn-default btn-sm btn-danger']) }}
+                                {{ Form::close() }}
+                    -->
+
+
+
+
+
+
+
 
                 </tr>
                 @endforeach
