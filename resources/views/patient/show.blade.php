@@ -113,7 +113,26 @@
                 @foreach($patient->examinations as $examination)
                 <tr>                    
                     <td>{{ date('j M Y  G:i', strtotime($examination->created_at)) }}</td>
-                    <td><strong>{{ $examination->Exam_type }}</strong></td>
+                    <td>
+                        
+                    @if ($examination->Exam_type === 'OP')
+                            <a href="{{ route('examination.show', $examination->id) }}" 
+                               class="btn btn-default btn-sm btn-info">{{ $examination->Exam_type }}</a>
+                    @elseif ($examination->Exam_type === 'CA1')
+                            <a href="{{ route('examination.showca1', $examination->id) }}" 
+                               class="btn btn-default btn-sm btn-info">{{ $examination->Exam_type }}</a>
+                    @elseif ($examination->Exam_type === 'CA2')
+                            <a href="{{ route('examination.showca2', $examination->id) }}" 
+                               class="btn btn-default btn-sm btn-info">{{ $examination->Exam_type }}</a>
+                    @else
+                            <a href="{{ route('patient.index') }}" 
+                               class="btn btn-default btn-sm btn-info"></a>
+                    @endif
+                        
+                    </td>
+                        
+                                                                      
+
                     <td>
 
                         {{ Form::open(['route' => ['examination.destroy', $examination->id], 'method'=>'DELETE']) }}
@@ -121,25 +140,6 @@
                         {{ Form::close() }}
 
                     </td>
-
-                    <!--                        
-                                            
-                                            <a href="{{ route('examination.destroy',$examination->id),['method'=>'DELETE'] }}" 
-                                   class="btn btn-default btn-sm btn-info"><span class="glyphicon glyphicon-trash"></span></a>
-                                            
-                                            
-                                            
-                                            {{ Form::open(['route' => ['patient.destroy', $patient->id], 'method'=>'DELETE']) }}
-                                    {{ Form::submit('Delete', ['class'=>'btn btn-default btn-sm btn-danger']) }}
-                                {{ Form::close() }}
-                    -->
-
-
-
-
-
-
-
 
                 </tr>
                 @endforeach

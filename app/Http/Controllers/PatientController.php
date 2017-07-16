@@ -183,10 +183,10 @@ class PatientController extends Controller {
     }
 
     public function search_name(Request $request) {
-        //
-        $search = $request->search_name;
+   
+      $search = $request->search_name;
 
-        $patients = DB::table('patients')->where('name', 'like', "%$search%")->get();
+       $patients = DB::table('patients')->where('name', 'like', "%$search%")->get();
         return view('patient.index', compact('patients'));
     }
 

@@ -69,7 +69,31 @@ class ExaminationController extends Controller {
      */
     public function show($id) {
         $examination = Examination::find($id);
+            
+        $patient= $examination->patient->id;
+        
         return view('examination.show')->withExamination($examination);
+        
+
+        
+//        return redirect()->route('patient.show', $patient_id);
+    }
+    
+    public function showca1($id) {
+        $examination = Examination::find($id);
+            
+        $patient= $examination->patient->id;
+        
+        return view('examination.showca1')->withExamination($examination);
+
+    }
+    
+    public function showca2($id) {
+        $examination = Examination::find($id);                    
+        
+        return view('examination.showca2')->withExamination($examination);
+           
+
     }
 
     /**

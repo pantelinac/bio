@@ -21,9 +21,6 @@ Route::resource('patient', 'PatientController');
 //Search by name patient
 Route::post('search_name',['uses' => 'PatientController@search_name', 'as' => 'patient.search']);
 
-//CRUD examinations 
-//Route::resource('examination', 'ExaminationController');
-
 //OP examination
 Route::post('examination/{patient_id}/op',['uses' => 'ExaminationController@store', 'as' => 'examination.store']);
 Route::get('examination/{patient_id}/op/create', ['uses' => 'ExaminationController@create', 'as' => 'examination.create']);
@@ -36,7 +33,15 @@ Route::get('examination/{patient_id}/ca1/create', ['uses' => 'ExaminationControl
 Route::post('examination/{patient_id}/ca2',['uses' => 'ExaminationController@storeca2', 'as' => 'examination.storeca2']);
 Route::get('examination/{patient_id}/ca2/create', ['uses' => 'ExaminationController@createca2', 'as' => 'examination.createca2']);
 
+//Delete examination
 Route::delete('examination/{examination_id}', ['uses' => 'ExaminationController@destroy', 'as' => 'examination.destroy']);
+
+//Show examination
+Route::group(['prefix' => 'examination/'], function() {
+Route::get('{examination_id}/op', ['uses' => 'ExaminationController@show', 'as' => 'examination.show']);
+Route::get('{examination_id}/ca1', ['uses' => 'ExaminationController@showca1', 'as' => 'examination.showca1']);
+Route::get('{examination_id}/ca2', ['uses' => 'ExaminationController@showca2', 'as' => 'examination.showca2']);
+});
 
 //Route::group(['prefix' => 'patient/{patient}'], function() {
 //
