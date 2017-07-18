@@ -6,10 +6,7 @@
             <file>file:/C:/wamp/www/biovita/resources/views/examination/showca1.blade.php</file>
             <file>file:/C:/wamp/www/biovita/resources/views/examination/showca2.blade.php</file>
             <file>file:/C:/wamp/www/biovita/resources/views/examination/show.blade.php</file>
-            <file>file:/C:/wamp/www/biovita/resources/views/patient/index.blade.php</file>
-            <file>file:/C:/wamp/www/biovita/resources/views/examination/createca1.blade.php</file>
-            <file>file:/C:/wamp/www/biovita/resources/views/examination/create.blade.php</file>
-            <file>file:/C:/wamp/www/biovita/app/Http/Controllers/ExaminationController.php</file>
+            <file>file:/C:/wamp/www/biovita/resources/views/examination/createca2.blade.php</file>
         </group>
     </open-files>
 </project-private>

@@ -9,6 +9,9 @@ use App\Examination;
 use Session;
 use Purifier;
 use DB;
+use TeamTNT\TNTSearch\TNTSearch;
+use Config;
+use App\Console\Commands;
 
 
 class PatientController extends Controller {
@@ -65,21 +68,21 @@ class PatientController extends Controller {
         //store in the database
         $patient = new Patient;
 
-        $patient->name                = $request->name;
-        $patient->date_of_birth       = $request->date_of_birth;
-        $patient->address             = $request->address;
-        $patient->place               = $request->place;
-        $patient->phone               = $request->phone;
-        $patient->profession          = $request->profession;
+        $patient->name = $request->name;
+        $patient->date_of_birth = $request->date_of_birth;
+        $patient->address = $request->address;
+        $patient->place = $request->place;
+        $patient->phone = $request->phone;
+        $patient->profession = $request->profession;
         $patient->drug_susceptibility = $request->drug_susceptibility;
-        $patient->personal_anament    = $request->personal_anament;
-        $patient->family_anament      = $request->family_anament;
-        $patient->date_last_period    = $request->date_last_period;
-        $patient->blood_type          = $request->blood_type;
-        $patient->rh                  = $request->rh;
-        $patient->childbirth          = $request->childbirth;
-        $patient->abortion            = $request->abortion;
-        $patient->slug                = $slug;
+        $patient->personal_anament = $request->personal_anament;
+        $patient->family_anament = $request->family_anament;
+        $patient->date_last_period = $request->date_last_period;
+        $patient->blood_type = $request->blood_type;
+        $patient->rh = $request->rh;
+        $patient->childbirth = $request->childbirth;
+        $patient->abortion = $request->abortion;
+        $patient->slug = $slug;
 
         $patient->save();
 
@@ -137,13 +140,13 @@ class PatientController extends Controller {
             'childbirth' => 'required|max:30|numeric',
             'abortion' => 'required|max:30|numeric'
         ));
-        
-        
-        
+
+
+
         //save
         $slug = str_slug(time() . '_' . $request->name);
         $patient = Patient::find($id);
-        
+
         $patient->name = $request->name;
         $patient->date_of_birth = $request->date_of_birth;
         $patient->address = $request->address;
@@ -163,7 +166,7 @@ class PatientController extends Controller {
         $patient->save();
 
         Session::flash('success', 'Podaci pacijenta uspešno izmenjeni!');
-        
+
         return redirect()->route('patient.show', $patient->id);
     }
 
@@ -174,8 +177,8 @@ class PatientController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy($id) {
-        $patient = Patient::find($id);        
-        
+        $patient = Patient::find($id);
+
         $patient->delete();
 
         Session::flash('success', 'Podaci pacijenta uspešno izbrisani!');
@@ -183,10 +186,25 @@ class PatientController extends Controller {
     }
 
     public function search_name(Request $request) {
-   
-      $search = $request->search_name;
 
-       $patients = DB::table('patients')->where('name', 'like', "%$search%")->get();
+
+
+
+ $tnt = new TNTSearch;
+
+        $tnt->loadConfig([
+            'driver' => 'mysql',
+            'host' => '127.0.0.1',
+            'database' => 'biovita',
+            'username' => 'root',
+            'password' => 'milica',
+            'storage' => storage_path(),
+        ]);
+        
+        $tnt->selectIndex("patients.index");
+
+        $res = $tnt->searchBoolean($request->input('search_name'), 1000);
+        $patients = Patient::whereIn('id', $res['ids'])->paginate(50);
         return view('patient.index', compact('patients'));
     }
 

@@ -77,9 +77,9 @@
                 </tbody>
             </table>
 
-<!--             <div class="text-center">
+             <div class="text-center">
             {!! $patients->links() !!}
-        </div>-->
+        </div>
 
         </div>
 

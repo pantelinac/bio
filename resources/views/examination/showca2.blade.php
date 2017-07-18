@@ -3,7 +3,6 @@
 
 @section('title', '|Ciljani akušerski ultrazvučni pregled u drugom i trećem trimestru trudnoće')
 
-
 @section('content')
 
 <div class="row">    
@@ -12,28 +11,47 @@
         <img  class="center-block visible-print-block" 
               src="{{ asset('images/bio.png') }}" height="150" width="400"/>
 
-        <h2 class="text-center">CILJANI AKUŠERSKI ULTRAZVUČNI PREGLED</h2>
-        <h3 class="text-center"> U DRUGOM I TREĆEM TRIMESTRU TRUDNOĆE</h3>
+        <h3 class="text-center">CILJANI AKUŠERSKI ULTRAZVUČNI PREGLED U DRUGOM I TREĆEM TRIMESTRU TRUDNOĆE</h3>
 
         <br>
         <h4><small>Prezime i ime: </small><strong>{{$examination->patient->name}}</strong></h4>
+        <section class="col-md-6">
+        <h6>Broj kartona: <strong>{{$examination->patient->id}}</strong></h6>
+        <h6>Datum rodjenja: <strong>{{$examination->patient->date_of_birth}}</strong></h6>
+        <h6>Adresa: <strong>{{$examination->patient->address}}, 
+                {{$examination->patient->place}}</strong></h6>
+        </section>
+        <section class="col-md-6">
+        <h6>Krvna grupa i RH faktor: <strong>{{$examination->patient->blood_type}}, 
+                {{$examination->patient->rh}}</strong></h6>
+        <h6>Osetljivost na lekove: <strong>{{$examination->patient->drug_susceptibility}}</strong></h6>
+        <h6>PM: <strong>{{$examination->patient->date_last_period}}</strong></h6>
+        </section>
 
-        <div class="col-md-6">
-            <h6>Broj kartona: <strong>{{$examination->patient->id}}</strong></h6>
-            <h6>Datum rodjenja: <strong>{{$examination->patient->date_of_birth}}</strong></h6>
-            <h6>Adresa: <strong>{{$examination->patient->address}}, 
-                    {{$examination->patient->place}}</strong></h6>
-            <h6>Krvna grupa i RH faktor: <strong>{{$examination->patient->blood_type}}, 
-                    {{$examination->patient->rh}}</strong></h6>
-            <h6>Osetljivost na lekove: <strong>{{$examination->patient->drug_susceptibility}}</strong></h6>
-            <h6>PM: <strong>{{$examination->patient->date_last_period}}</strong></h6>
-        </div> 
+
+
+
+
+        <!--        <div class="col-md-6">
+                    <h6>Broj kartona: <strong>{{$examination->patient->id}}</strong></h6>
+                    <h6>Datum rodjenja: <strong>{{$examination->patient->date_of_birth}}</strong></h6>
+                    <h6>Adresa: <strong>{{$examination->patient->address}}, 
+                            {{$examination->patient->place}}</strong></h6>
+                </div>
+                <div class="col-md-6">
+                    <h6>Krvna grupa i RH faktor: <strong>{{$examination->patient->blood_type}}, 
+                            {{$examination->patient->rh}}</strong></h6>
+                    <h6>Osetljivost na lekove: <strong>{{$examination->patient->drug_susceptibility}}</strong></h6>
+                    <h6>PM: <strong>{{$examination->patient->date_last_period}}</strong></h6>
+                </div> -->
 
         <div class="col-md-6 hidden-print">
-            <h6>Telefon: <strong>{{$examination->patient->phone}}</strong></h6>
-            <h6>Zanimanje: <strong>{{$examination->patient->profession}}</strong></h6>
+            <h6>Telefon: <strong>{{$examination->patient->phone}}</strong></h6>            
             <h6>Porođaj: <strong>{{$examination->patient->childbirth}}</strong></h6>
             <h6>Abortus: <strong>{{$examination->patient->abortion}}</strong></h6>
+        </div>
+        <div class="col-md-6 hidden-print">
+            <h6>Zanimanje: <strong>{{$examination->patient->profession}}</strong></h6>
             <h6>Lična anamenta: <strong>{{$examination->patient->personal_anament}}</strong></h6>
             <h6>Porodicna anamenta: <strong>{{$examination->patient->family_anament}}</strong></h6>
         </div>
@@ -105,16 +123,16 @@
                 <h6>{{$examination->Ex_Fe_Ha}}</h6>            
             </div>
         </div>
-        
+
         <div class="col-md-12">
             <p>Pregled fetalnog srca: Srce pravilno orijentisano u grudnom košu.
-             Sagledani: četvorošupljinski i petošupljinski presek srca, luk aorte, 
-            presek 3 krvna suda, IVS, srčani zalisci, ostijum primum, širine...?...
-            Levi izlazni protočni trakt definiše izlaz aorte,čija je širina 
-            <strong>{{$examination->Width_of_aorta}} mm</strong>. Desni izlazni 
-            protočni trakt definiše izlaz pulmonalnog stabla širine 
-            <strong>{{$examination->Width_of_aorta}} mm.</strong>
-            Protok kroz valvule laminaran.
+                Sagledani: četvorošupljinski i petošupljinski presek srca, luk aorte, 
+                presek 3 krvna suda, IVS, srčani zalisci, ostijum primum, širine...?...
+                Levi izlazni protočni trakt definiše izlaz aorte,čija je širina 
+                <strong>{{$examination->Width_of_aorta}} mm</strong>. Desni izlazni 
+                protočni trakt definiše izlaz pulmonalnog stabla širine 
+                <strong>{{$examination->Width_of_aorta}} mm.</strong>
+                Protok kroz valvule laminaran.
             </p>
         </div>
 
