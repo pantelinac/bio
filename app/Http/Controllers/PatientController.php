@@ -64,9 +64,7 @@ class PatientController extends Controller {
             'childbirth' => 'required|max:30|numeric',
             'abortion' => 'required|max:30|numeric'
         ));
-
-        //store in the database slug
-        $slug = str_slug(time() . '_' . $request->name);
+        
 
         //store in the database
         $patient = new Patient;
@@ -85,7 +83,6 @@ class PatientController extends Controller {
         $patient->rh = $request->rh;
         $patient->childbirth = $request->childbirth;
         $patient->abortion = $request->abortion;
-        $patient->slug = $slug;
 
         $patient->save();
 
@@ -146,8 +143,7 @@ class PatientController extends Controller {
 
 
 
-        //save
-        $slug = str_slug(time() . '_' . $request->name);
+        //save       
         $patient = Patient::find($id);
 
         $patient->name = $request->name;
@@ -164,7 +160,6 @@ class PatientController extends Controller {
         $patient->rh = $request->rh;
         $patient->childbirth = $request->childbirth;
         $patient->abortion = $request->abortion;
-        $patient->slug = $slug;
 
         $patient->save();
 

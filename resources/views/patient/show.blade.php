@@ -118,10 +118,10 @@
                     @if ($examination->Exam_type === 'OP')
                             <a href="{{ route('examination.show', $examination->id) }}" 
                                class="btn btn-default btn-sm btn-info">{{ $examination->Exam_type }}</a>
-                    @elseif ($examination->Exam_type === 'CA1')
+                    @elseif ($examination->Exam_type === 'EUZ1')
                             <a href="{{ route('examination.showca1', $examination->id) }}" 
                                class="btn btn-default btn-sm btn-info">{{ $examination->Exam_type }}</a>
-                    @elseif ($examination->Exam_type === 'CA2')
+                    @elseif ($examination->Exam_type === 'EUZ2')
                             <a href="{{ route('examination.showca2', $examination->id) }}" 
                                class="btn btn-default btn-sm btn-info">{{ $examination->Exam_type }}</a>
                     @else

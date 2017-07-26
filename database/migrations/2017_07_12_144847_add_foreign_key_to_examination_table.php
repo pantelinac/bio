@@ -24,6 +24,6 @@ class AddForeignKeyToExaminationTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropForeign(['patient_id']);
     }
 }

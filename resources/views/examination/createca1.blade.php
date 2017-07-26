@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title', '|Ciljani Akušerski pregled 1')
+@section('title', '| EUZ 1')
 
 @section('stylesheets')
 
@@ -67,15 +67,15 @@
             
             {{Form::label('NB', 'NB:')}}
             {{Form::text('NB', null, 
-            array('class'=>'form-control','required'=>'','numeric'=>''))}}
+            array('class'=>'form-control','required'=>'','maxlength'=>'100'))}}
             
             {{Form::label('FMU', 'FMU:')}}
             {{Form::text('FMU', null, 
-            array('class'=>'form-control','required'=>'','numeric'=>''))}}
+            array('class'=>'form-control','required'=>'','maxlength'=>'100'))}}
             
             {{Form::label('PKDV', 'PKDV:')}}
             {{Form::text('PKDV', null, 
-            array('class'=>'form-control','required'=>'','maxlength'=>'255'))}}
+            array('class'=>'form-control','required'=>'','maxlength'=>'100'))}}
         </div>
             
         <div class='col-md-3'>
@@ -89,15 +89,15 @@
             
             {{Form::label('AFI', 'Količina plod tečnosti:')}}
             {{Form::text('TSR', null, 
-            array('class'=>'form-control','required'=>'','numeric'=>''))}}
+            array('class'=>'form-control','required'=>'','maxlength'=>'100'))}}
             
             {{Form::label('Ins_tro', 'Insercija trofoblasta:')}}
             {{Form::text('Ins_tro', null, 
-            array('class'=>'form-control','required'=>'','maxlength'=>'255'))}}
+            array('class'=>'form-control','required'=>'','maxlength'=>'100'))}}
             
             {{Form::label('FD', 'Dinamika pom ploda:')}}
             {{Form::text('FD', null, 
-            array('class'=>'form-control form-spacing-boto','required'=>'','maxlength'=>'255'))}}
+            array('class'=>'form-control form-spacing-boto','required'=>'','maxlength'=>'100'))}}
             
             
         </div>

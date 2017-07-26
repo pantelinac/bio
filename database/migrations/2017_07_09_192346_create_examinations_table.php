@@ -32,18 +32,17 @@ class CreateExaminationsTable extends Migration {
             $table->decimal('TM', 6, 2)->nullable();
             
             $table->decimal('NT', 4, 0)->nullable();
-            $table->decimal('NB', 4, 0)->nullable();
-            $table->decimal('FMU', 6, 2)->nullable();
+            $table->string('NB', 100)->nullable();            
+            $table->string('FMU', 100)->nullable();
             $table->string('PKDV', 100)->nullable();
             $table->string('TSR', 100)->nullable();
-            $table->decimal('FHR', 6, 2)->nullable();
-            $table->decimal('AFI', 6, 2)->nullable();
-            $table->string('Ins_tro')->nullable();
-            $table->string('FD')->nullable();
+            $table->decimal('FHR', 4, 0)->nullable();
+            $table->string('AFI', 100)->nullable();
+            $table->string('Ins_tro', 100)->nullable();
+            $table->string('FD', 100)->nullable();
             $table->string('AK_PAL', 100)->nullable();
             
             //Second spec controll
-            $table->decimal('Biometry', 6, 2)->nullable();
             $table->decimal('Va', 4, 0)->nullable();
             $table->decimal('Vp', 4, 0)->nullable();
             $table->decimal('IOD', 4, 0)->nullable();

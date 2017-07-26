@@ -41,7 +41,7 @@ class ExaminationController extends Controller {
             'note' => 'sometimes|max:255',
         ));
 
-        // Type of exam ( OP, CA1 or CA2 )
+        // Type of exam ( OP, EUZ1 or EUZ2 )
         $exam_type = "OP";
 
         $patient = Patient::find($patient_id);
@@ -79,8 +79,6 @@ class ExaminationController extends Controller {
         return view('examination.show')->withExamination($examination);
 
 
-
-//        return redirect()->route('patient.show', $patient_id);
     }
 
     public function showca1($id) {
@@ -141,22 +139,22 @@ class ExaminationController extends Controller {
             'AC' => 'sometimes|numeric',
             'TM' => 'sometimes|numeric',
             'NT' => 'sometimes|numeric',
-            'NB' => 'sometimes|numeric',
-            'FMU' => 'sometimes|numeric',
-            'PKDV' => 'sometimes|max:255',
+            'NB' => 'sometimes|max:100',
+            'FMU' => 'sometimes|max:100',
+            'PKDV' => 'sometimes|max:100',
             'TSR' => 'sometimes|max:100',
             'FHR' => 'sometimes|numeric',
-            'AFI' => 'sometimes|numeric',
-            'Ins_tro' => 'sometimes|max:255',
-            'FD' => 'sometimes|max:255',
+            'AFI' => 'sometimes|max:100',
+            'Ins_tro' => 'sometimes|max:100',
+            'FD' => 'sometimes|max:100',
             'AK_PAL' => 'sometimes|max:100',
             'diagnosis' => 'sometimes|max:255',
             'therapy' => 'sometimes|max:255',
             'note' => 'sometimes|max:255'
         ));
 
-        // Type of exam ( OP, CA1 or CA2 )
-        $exam_type = "CA1";
+        // Type of exam ( OP, EUZ1 or EUZ2 )
+        $exam_type = "EUZ1";
 
         $patient = Patient::find($patient_id);
 
@@ -195,7 +193,7 @@ class ExaminationController extends Controller {
     }
 
     /**
-     * Show the form for creating a new CA1.
+     * Show the form for creating a new CA2.
      *
      * @return \Illuminate\Http\Response
      */
@@ -213,7 +211,6 @@ class ExaminationController extends Controller {
     public function storeca2(Request $request, $patient_id) {
 
         $this->validate($request, array(
-            'Biometry' => 'sometimes|numeric',
             'BPD' => 'sometimes|numeric',
             'Hem' => 'sometimes|numeric',
             'OFD' => 'sometimes|numeric',
@@ -224,7 +221,7 @@ class ExaminationController extends Controller {
             'TCD' => 'sometimes|numeric',
             'CM' => 'sometimes|numeric',
             'NN' => 'sometimes|numeric',
-            'NB' => 'sometimes|numeric',
+            'NB' => 'sometimes|max:100',
             'HL' => 'sometimes|numeric',
             'FL' => 'sometimes|numeric',
             'AC' => 'sometimes|numeric',
@@ -232,9 +229,9 @@ class ExaminationController extends Controller {
             'FHR' => 'sometimes|numeric',
             'cerviks' => 'sometimes|numeric',
             'Ins_pos' => 'sometimes|max:255',
-            'AFI' => 'sometimes|numeric',
+            'AFI' => 'sometimes|max:100',
             'Pupil' => 'sometimes|max:255',
-            'FD' => 'sometimes|max:255',
+            'FD' => 'sometimes|max:100',
             'Ex_Fe_Ha' => 'sometimes|max:255',
             'Width_of_aorta' => 'sometimes|numeric',
             'Pul_tree' => 'sometimes|numeric',
@@ -244,15 +241,14 @@ class ExaminationController extends Controller {
             'note' => 'sometimes|max:255'
         ));
 
-        // Type of exam ( OP, CA1 or CA2 )
-        $exam_type = "CA2";
+        // Type of exam ( OP, EUZ1 or EUZ2 )
+        $exam_type = "EUZ2";
 
         $patient = Patient::find($patient_id);
 
         // Store in the db
         $examination = new Examination;
 
-        $examination->Biometry = $request->Biometry;
         $examination->BPD = $request->BPD;
         $examination->Hem = $request->Hem;
         $examination->OFD = $request->OFD;

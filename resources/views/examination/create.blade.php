@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title', '|Opšti Pregled')
+@section('title', '|Nalaz lekara specijaliste')
 
 @section('stylesheets')
 
@@ -12,7 +12,7 @@
 
 <div class="row">    
     <div class='col-md-8 col-md-offset-2'>
-        <h1>Opšti Pregled <small> za <a href="{{ route('patient.show', $patient->id) }}" 
+        <h1>Nalaz lekara specijaliste <small> za <a href="{{ route('patient.show', $patient->id) }}" 
                class="btn btn-default btn-sm btn-info">{{$patient->name}}</a></small></h1>
         <hr>
        

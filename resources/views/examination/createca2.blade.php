@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title', '|Ciljani Akušerski pregled 2')
+@section('title', '| EUZ 2')
 
 @section('stylesheets')
 
@@ -24,9 +24,6 @@
         {!! Form::open(['route' => ['examination.storeca2',$patient],'data-parsley-validate' => '']) !!}
 <div class="col-md-12">
     <div class="col-md-3">
-        {{Form::label('Biometry', 'Biometrija ploda:')}}
-        {{Form::text('Biometry', null, 
-            array('class'=>'form-control','required'=>'','numeric'=>''))}}    
 
         {{Form::label('BPD', 'BPD:')}}
         {{Form::text('BPD', null, 
@@ -71,7 +68,7 @@
 
         {{Form::label('NB', 'NB:')}}
         {{Form::text('NB', null, 
-            array('class'=>'form-control','required'=>'','numeric'=>''))}}
+            array('class'=>'form-control','required'=>'','maxlength'=>'100'))}}
 
         {{Form::label('HL', 'HL:')}}
         {{Form::text('HL', null, 
@@ -105,7 +102,7 @@
 
         {{Form::label('AFI', 'Kol. plod. tečnosti:')}}
         {{Form::text('TSR', null, 
-            array('class'=>'form-control','required'=>'','numeric'=>''))}}
+            array('class'=>'form-control','required'=>'','maxlength'=>'100'))}}
 
         {{Form::label('Pupil', 'Pupčanik:')}}
         {{Form::text('Pupil', null, 
@@ -114,7 +111,7 @@
         <div class="col-md-3">
         {{Form::label('FD', 'Dinamika pom ploda:')}}
         {{Form::text('FD', null, 
-            array('class'=>'form-control','required'=>'','maxlength'=>'255'))}}
+            array('class'=>'form-control','required'=>'','maxlength'=>'100'))}}
 
         {{Form::label('Ex_Fe_Ha', 'Pregled fetalno srca:')}}
         {{Form::text('Ex_Fe_Ha', null, 
