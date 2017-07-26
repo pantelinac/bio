@@ -13,8 +13,11 @@ use TeamTNT\TNTSearch\TNTSearch;
 use Config;
 use App\Console\Commands;
 
-
 class PatientController extends Controller {
+
+    public function __construct() {
+        $this->middleware('auth');
+    }
 
     /**
      * Display a listing of the resource.
@@ -190,7 +193,7 @@ class PatientController extends Controller {
 
 
 
- $tnt = new TNTSearch;
+        $tnt = new TNTSearch;
 
         $tnt->loadConfig([
             'driver' => 'mysql',
@@ -200,7 +203,7 @@ class PatientController extends Controller {
             'password' => 'milica',
             'storage' => storage_path(),
         ]);
-        
+
         $tnt->selectIndex("patients.index");
 
         $res = $tnt->searchBoolean($request->input('search_name'), 1000);

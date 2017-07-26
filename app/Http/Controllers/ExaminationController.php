@@ -10,6 +10,10 @@ use Session;
 
 class ExaminationController extends Controller {
 
+    public function __construct() {
+        $this->middleware('auth');
+    }
+
     /**
      * Show the form for creating a new OP.
      *
@@ -69,31 +73,28 @@ class ExaminationController extends Controller {
      */
     public function show($id) {
         $examination = Examination::find($id);
-            
-        $patient= $examination->patient->id;
-        
-        return view('examination.show')->withExamination($examination);
-        
 
-        
+        $patient = $examination->patient->id;
+
+        return view('examination.show')->withExamination($examination);
+
+
+
 //        return redirect()->route('patient.show', $patient_id);
     }
-    
+
     public function showca1($id) {
         $examination = Examination::find($id);
-            
-        $patient= $examination->patient->id;
-        
+
+        $patient = $examination->patient->id;
+
         return view('examination.showca1')->withExamination($examination);
-
     }
-    
-    public function showca2($id) {
-        $examination = Examination::find($id);                    
-        
-        return view('examination.showca2')->withExamination($examination);
-           
 
+    public function showca2($id) {
+        $examination = Examination::find($id);
+
+        return view('examination.showca2')->withExamination($examination);
     }
 
     /**
@@ -103,11 +104,11 @@ class ExaminationController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy($id) {
-        $examination = Examination::find($id);      
+        $examination = Examination::find($id);
         $patient_id = $examination->patient->id;
-        
+
         $examination->delete();
-        
+
 
         Session::flash('success', 'Podaci pregleda uspešno izbrisani!');
         return redirect()->route('patient.show', $patient_id);
@@ -284,7 +285,7 @@ class ExaminationController extends Controller {
         $examination->patient()->associate($patient);
 
         $examination->save();
-        
+
         Session::flash('success', 'Izveštaj uspešno sačuvan!');
 
         return redirect()->route('patient.show', $patient->id);

@@ -17,10 +17,10 @@
                class="btn btn-default btn-sm btn-info">OP</a>
 
             <a href="{{ route('examination.createca1', $patient->id) }}" 
-               class="btn btn-default btn-sm btn-info">CA 1</a>
+               class="btn btn-default btn-sm btn-info">EUZ 1</a>
 
             <a href="{{ route('examination.createca2', $patient->id) }}" 
-               class="btn btn-default btn-sm btn-info">CA 2</a>
+               class="btn btn-default btn-sm btn-info">EUZ 2</a>
         </h1>
         <hr>
     </div>

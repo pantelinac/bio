@@ -97,10 +97,7 @@
         <br>
         <div class="visible-print-block">          
             <h6 class="text-left">Novi Sad,</h6>
-            <h6>{{$examination->created_at}}</h6>
-            <hr>
-            <h6><small>Napomene:</small></h6>
-              
+            <h6>{{$examination->created_at}}</h6>              
         </div>
 
     </div>

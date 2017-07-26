@@ -57,3 +57,6 @@ Route::get('{examination_id}/ca2', ['uses' => 'ExaminationController@showca2', '
 //
 //
 //});
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
