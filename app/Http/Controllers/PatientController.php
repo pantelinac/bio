@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use Auth;
+use App\User;
 use App\Patient;
 use App\Examination;
 use Session;
@@ -12,6 +14,7 @@ use DB;
 use TeamTNT\TNTSearch\TNTSearch;
 use Config;
 use App\Console\Commands;
+use Artisan;
 
 class PatientController extends Controller {
 
@@ -36,8 +39,8 @@ class PatientController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        //
-        return view('patient.create');
+        $user = Auth::id();
+        return view('patient.create')->withUser($user);
     }
 
     /**
@@ -64,7 +67,8 @@ class PatientController extends Controller {
             'childbirth' => 'required|max:30|numeric',
             'abortion' => 'required|max:30|numeric'
         ));
-        
+
+        $user = Auth::id();
 
         //store in the database
         $patient = new Patient;
@@ -83,10 +87,15 @@ class PatientController extends Controller {
         $patient->rh = $request->rh;
         $patient->childbirth = $request->childbirth;
         $patient->abortion = $request->abortion;
+        $patient->user()->associate($user);
 
         $patient->save();
 
         Session::flash('success', 'Podaci pacijenta uspešno sačuvani!');
+
+        // Calling artisan comand for updating search index of patients
+        Artisan::call('index:patients');
+
 
         //redirect to patient/{id}
         return redirect()->route('patient.show', $patient->id);
@@ -165,6 +174,9 @@ class PatientController extends Controller {
 
         Session::flash('success', 'Podaci pacijenta uspešno izmenjeni!');
 
+        // Calling artisan comand for updating search index of patients
+        Artisan::call('index:patients');
+
         return redirect()->route('patient.show', $patient->id);
     }
 
@@ -180,6 +192,10 @@ class PatientController extends Controller {
         $patient->delete();
 
         Session::flash('success', 'Podaci pacijenta uspešno izbrisani!');
+
+        // Calling artisan comand for updating search index of patients
+        Artisan::call('index:patients');
+
         return redirect()->route('patient.index');
     }
 

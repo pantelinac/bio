@@ -9,23 +9,23 @@
     <div class='col-md-8 col-md-offset-2'>
 
         <img  class="center-block visible-print-block" 
-              src="{{ asset('images/bio.png') }}" height="150" width="400"/>
+              src="{{ asset('images/bio.png') }}" height="100" width="350"/>
 
         <h3 class="text-center">CILJANI AKUŠERSKI ULTRAZVUČNI PREGLED U DRUGOM I TREĆEM TRIMESTRU TRUDNOĆE</h3>
 
         <br>
         <h4><small>Prezime i ime: </small><strong>{{$examination->patient->name}}</strong></h4>
         <section class="col-md-6">
-        <h6>Broj kartona: <strong>{{$examination->patient->id}}</strong></h6>
-        <h6>Datum rodjenja: <strong>{{$examination->patient->date_of_birth}}</strong></h6>
-        <h6>Adresa: <strong>{{$examination->patient->address}}, 
-                {{$examination->patient->place}}</strong></h6>
+            <h6>Broj kartona: <strong>{{$examination->patient->id}}</strong></h6>
+            <h6>Datum rodjenja: <strong>{{$examination->patient->date_of_birth}}</strong></h6>
+            <h6>Adresa: <strong>{{$examination->patient->address}}, 
+                    {{$examination->patient->place}}</strong></h6>
         </section>
         <section class="col-md-6">
-        <h6>Krvna grupa i RH faktor: <strong>{{$examination->patient->blood_type}}, 
-                {{$examination->patient->rh}}</strong></h6>
-        <h6>Osetljivost na lekove: <strong>{{$examination->patient->drug_susceptibility}}</strong></h6>
-        <h6>PM: <strong>{{$examination->patient->date_last_period}}</strong></h6>
+            <h6>Krvna grupa i RH faktor: <strong>{{$examination->patient->blood_type}}, 
+                    {{$examination->patient->rh}}</strong></h6>
+            <h6>Osetljivost na lekove: <strong>{{$examination->patient->drug_susceptibility}}</strong></h6>
+            <h6>PM: <strong>{{$examination->patient->date_last_period}}</strong></h6>
         </section>
 
 
@@ -175,19 +175,19 @@
 
         <br>
         <div class="visible-print-block">          
-            <h6 class="text-left">Novi Sad,</h6>
-            <h6>{{$examination->created_at}}</h6>
+            <h6 class="text-left">Novi Sad,<br>
+         {{$examination->created_at}}</h6>
+            <h6 class="text-right">{{$examination->patient->user->name}}</h6>
             <hr>
+
             <h6>
                 <small>
-                    Napomene:
+                    Napomene:<br>
                 </small>
-            </h6>
-            <h6>
                 <small>
                     Ultrazvučni pregled ima svoja ograničenja,kako od 
                     strane aparata, tako i od strane operatera,habitusa majke i
-                    položaja ploda. Hormonalni nalaz ultrazvučnog pregleda ne predstavlja garanciju 
+                    položaja ploda. Normalan nalaz ultrazvučnog pregleda ne predstavlja garanciju 
                     normalnog kariotipa ili izostanaka morfološkog poremećaja koji 
                     se u datoj gestaciji ne može videti, kao ni budućeg razvitka 
                     poremećaja u kasnoj gestaciji. Pregled fetalnog srca i detaljan ultrazvučni pregled može se 

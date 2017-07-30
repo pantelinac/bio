@@ -9,7 +9,7 @@
     <div class='col-md-8 col-md-offset-2'>
                
         <img  class="center-block visible-print-block" 
-              src="{{ asset('images/bio.png') }}" height="150" width="400"/>
+              src="{{ asset('images/bio.png') }}" height="100" width="350"/>
         
         <h2 class="text-center">NALAZ LEKARA SPECIJALISTE</h2>
         <br>
@@ -97,7 +97,8 @@
         <br>
         <div class="visible-print-block">          
             <h6 class="text-left">Novi Sad,</h6>
-            <h6>{{$examination->created_at}}</h6>              
+            <h6>{{$examination->created_at}}</h6>   
+            <h6 class="text-right">{{$examination->patient->user->name}}</h6>
         </div>
 
     </div>

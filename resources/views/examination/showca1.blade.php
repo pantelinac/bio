@@ -6,7 +6,7 @@
 @section('content')
 
 <div class="row">    
-    <div class='col-md-10 col-md-offset-1'>
+    <div class='col-md-8 col-md-offset-2'>
 
         <img  class="center-block visible-print-block" 
               src="{{ asset('images/bio.png') }}" height="100" width="350"/>
@@ -35,9 +35,9 @@
             <h6>Lična anamenta: <strong>{{$examination->patient->personal_anament}}</strong></h6>
             <h6>Porodicna anamenta: <strong>{{$examination->patient->family_anament}}</strong></h6>
         </div>
-        
 
-        
+
+
         <div>
             <br>
             <h6>
@@ -49,9 +49,9 @@
                 </strong>                
             </h6>
         </div>
-        
+
         <br>
-        
+
         <div class="well well-sm">
 
             <h6><strong>NT : {{$examination->NT}} mm</strong></h6>
@@ -137,7 +137,8 @@
         <div class="visible-print-block">          
             <h6 class="text-left">Novi Sad,</h6>
             <h6>{{$examination->created_at}}</h6>
-            <hr>
+            <h6 class="text-right">{{$examination->patient->user->name}}</h6>
+            
             <h6>
                 <small>
                     Napomene:
@@ -147,27 +148,16 @@
                 <small>
                     Ultrazvučni pregled ima svoja ograničenja,kako od 
                     strane aparata, tako i od strane operatera,habitusa majke i
-                    položaja ploda.
-                </small>
-            </h6>
-            <h6>
-                <small>
-                    Hormonalni nalaz ultrazvučnog pregleda ne predstavlja garanciju 
+                    položaja ploda. Normalan nalaz ultrazvučnog pregleda ne predstavlja garanciju 
                     normalnog kariotipa ili izostanaka morfološkog poremećaja koji 
                     se u datoj gestaciji ne može videti, kao ni budućeg razvitka 
-                    poremećaja u kasnoj gestaciji.
-                </small>
-            </h6>
-            <h6>
-                <small>
-                    Pregled fetalnog srca i detaljan ultrazvučni pregled može se 
+                    poremećaja u kasnoj gestaciji. Pregled fetalnog srca i detaljan ultrazvučni pregled može se 
                     uraditi na klinici za ginekologiju i akušerstvo u Novom Sadu,
                     od 20. do 28. nedelje gestacije. Dalji pregled fetalnog srca 
                     je moguć na pedijatrijskoj klinici u tiršovoj ulici u Beogradu, 
                     tel: 011 / 20 - 60 - 680
                 </small>
             </h6>
-
         </div>
 
     </div>
