@@ -49,7 +49,7 @@ class IndexPatients extends Command {
         ]);
 
         $indexer = $tnt->createIndex('patients.index');
-        $indexer->query('SELECT id, name, date_of_birth, address, place, phone,  blood_type FROM patients;');
+        $indexer->query('SELECT id, name, address, place, phone FROM patients;');
         $indexer->run();
     }
 

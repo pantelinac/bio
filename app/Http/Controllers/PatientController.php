@@ -94,7 +94,27 @@ class PatientController extends Controller {
         Session::flash('success', 'Podaci pacijenta uspešno sačuvani!');
 
         // Calling artisan comand for updating search index of patients
-        Artisan::call('index:patients');
+        $tnt = new TNTSearch;
+
+        $tnt->loadConfig([
+            'driver' => 'mysql',
+            'host' => '127.0.0.1',
+            'database' => 'biovita',
+            'username' => 'root',
+            'password' => 'milica',
+            'storage' => storage_path(),
+        ]);
+
+        $tnt->selectIndex("patients.index");
+        
+        $index = $tnt->getIndex();
+        
+        $index->insert(['id' => $patient->id,
+            'name'    => $patient->name, 
+            'address' => $patient->address,
+            'place'   => $patient->place,
+            'phone'   => $patient->phone,
+            ]);
 
 
         //redirect to patient/{id}
@@ -173,9 +193,29 @@ class PatientController extends Controller {
         $patient->save();
 
         Session::flash('success', 'Podaci pacijenta uspešno izmenjeni!');
-
+        
         // Calling artisan comand for updating search index of patients
-        Artisan::call('index:patients');
+ 
+        $tnt = new TNTSearch;
+
+        $tnt->loadConfig([
+            'driver' => 'mysql',
+            'host' => '127.0.0.1',
+            'database' => 'biovita',
+            'username' => 'root',
+            'password' => 'milica',
+            'storage' => storage_path(),
+        ]);
+
+        $tnt->selectIndex("patients.index");
+        
+        $index = $tnt->getIndex();
+       $index->update($id, ['id' => $patient->id,
+            'name'    => $patient->name, 
+            'address' => $patient->address,
+            'place'   => $patient->place,
+            'phone'   => $patient->phone,
+            ]);
 
         return redirect()->route('patient.show', $patient->id);
     }
@@ -189,13 +229,26 @@ class PatientController extends Controller {
     public function destroy($id) {
         $patient = Patient::find($id);
 
+        // Calling artisan comand for updating search index of patients 
+        $tnt = new TNTSearch;
+        $tnt->loadConfig([
+            'driver' => 'mysql',
+            'host' => '127.0.0.1',
+            'database' => 'biovita',
+            'username' => 'root',
+            'password' => 'milica',
+            'storage' => storage_path(),
+        ]);
+
+        $tnt->selectIndex("patients.index");        
+        $index = $tnt->getIndex();
+        $index->delete($id);
+        
+        // Delite patient
         $patient->delete();
 
         Session::flash('success', 'Podaci pacijenta uspešno izbrisani!');
-
-        // Calling artisan comand for updating search index of patients
-        Artisan::call('index:patients');
-
+        
         return redirect()->route('patient.index');
     }
 
