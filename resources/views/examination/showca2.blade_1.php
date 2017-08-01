@@ -11,7 +11,7 @@
         <img  class="center-block visible-print-block" 
               src="{{ asset('images/bio.png') }}" height="100" width="350"/>
 
-        <h4 class="text-center"><strong>CILJANI AKUŠERSKI ULTRAZVUČNI PREGLED U DRUGOM I TREĆEM TRIMESTRU TRUDNOĆE</strong></h4>
+        <h3 class="text-center">CILJANI AKUŠERSKI ULTRAZVUČNI PREGLED U DRUGOM I TREĆEM TRIMESTRU TRUDNOĆE</h3>
 
         <br>
         <h4><small>Prezime i ime: </small><strong>{{$examination->patient->name}}</strong></h4>
@@ -56,78 +56,76 @@
             <h6>Porodicna anamneza: <strong>{{$examination->patient->family_anament}}</strong></h6>
         </div>
 
+        <div class="col-md-6">
+            <h6><strong>Biometrija ploda : {{$examination->Biometry}} mm</strong></h6>            
+        </div>
+
         <div class="col-md-12">
-            <hr>
-            <h6><strong>Biometrija ploda :mm</strong></h6>
-            <h6><strong>BPD : {{$examination->BPD}} , Hem : {{$examination->Hem}} , 
-                    OFD : {{$examination->OFD}} , HC : {{$examination->HC}} , 
-                    Va : {{$examination->Va}} , Vp : {{$examination->Vp}} , 
-                    IOD : {{$examination->IOD}} , TCD : {{$examination->TCD}} , 
-                    CM : {{$examination->CM}} , NN : {{$examination->NN}} , 
-                    NB : {{$examination->NB}} , HL : {{$examination->HL}} , 
-                    FL : {{$examination->FL}} , AC : {{$examination->AC}} , 
-                    TM : {{$examination->TM}} g, FHR+ : {{$examination->FHR}} /min, 
-                    Cerviks : {{$examination->cerviks}} </strong></h6>
+            <h6>BPD : {{$examination->BPD}} mm, Hem : {{$examination->Hem}} mm, 
+                OFD : {{$examination->OFD}} mm, HC : {{$examination->HC}} mm, 
+                Va : {{$examination->Va}} mm, Vp : {{$examination->Vp}} mm, 
+                IOD : {{$examination->IOD}} mm, TCD : {{$examination->TCD}} mm, 
+                CM : {{$examination->CM}} mm, NN : {{$examination->NN}} mm, 
+                NB : {{$examination->NB}} mm, HL : {{$examination->HL}} mm, 
+                FL : {{$examination->FL}} mm, AC : {{$examination->AC}} mm, 
+                TM : {{$examination->TM}} g, FHR+ : {{$examination->FHR}} /min, 
+                Cerviks : {{$examination->cerviks}} mm</h6>
 
         </div>
 
         <div class="col-md-12">
+            <p>Kranijum,lice, vrat, kičmeni stub i ekstremiteti deluju uredno.</p>
             <p>Sagledani: Očna sočiva, kontinuitet prednjeg trbušnog zida i 
-                dijafragme, pluća, želudac, GIT, mokraćna bešika, bubrezi. 
-                Kranijum, lice, vrat, kičmeni stub i ekstremiteti deluju uredno.</p>
-            <p>Insercija posteljice: {{$examination->Ins_pos}}<br>
-                Količina plodove tečnosti: {{$examination->AFI}}<br>
-                Pupčanik: {{$examination->Pupil}}<br>
-                Dinamika pokreta ploda: {{$examination->FD}}</p>
+                dijafragme, pluća, želudac, GIT, mokraćna bešika, bubrezi.</p>
         </div>
 
-        <!--        <div class="col-md-12">
-                    <div class="col-md-3">
-                        <h6>Insercija posteljice:</h6>            
-                    </div>
-                    <div class="col-md-9">
-                        <h6>{{$examination->Ins_pos}}</h6>            
-                    </div>
-                </div>-->
-        <!--
-                <div class="col-md-12">
-                    <div class="col-md-3">
-                        <h6>Količina plodove tečnosti:</h6>            
-                    </div>
-                    <div class="col-md-9">
-                        <h6>{{$examination->AFI}}</h6>            
-                    </div>
-                </div>-->
-
-        <!--        <div class="col-md-12">
-                    <div class="col-md-3">
-                        <h6>Pupčanik:</h6>            
-                    </div>
-                    <div class="col-md-9">
-                        <h6>{{$examination->Pupil}}</h6>            
-                    </div>
-                </div>-->
-
-        <!--        <div class="col-md-12">
-                    <div class="col-md-3">
-                        <h6>Dinamika pokreta ploda:</h6>            
-                    </div>
-                    <div class="col-md-9">
-                        <h6>{{$examination->FD}}</h6>            
-                    </div>
-                </div>-->
-
-        <!--        <div class="col-md-12">
-                    <div class="col-md-3">
-                        <h6>Pregled fetalnog srca:</h6>            
-                    </div>
-                    <div class="col-md-9">
-                        <h6>{{$examination->Ex_Fe_Ha}}</h6>            
-                    </div>
-                </div>-->
+        <div class="col-md-12">
+            <div class="col-md-3">
+                <h6>Insercija posteljice:</h6>            
+            </div>
+            <div class="col-md-9">
+                <h6>{{$examination->Ins_pos}}</h6>            
+            </div>
+        </div>
 
         <div class="col-md-12">
-            <p><strong>Pregled fetalnog srca:</strong> Srce pravilno orijentisano u grudnom košu.
+            <div class="col-md-3">
+                <h6>Količina plodove tečnosti:</h6>            
+            </div>
+            <div class="col-md-9">
+                <h6>{{$examination->AFI}}</h6>            
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="col-md-3">
+                <h6>Pupčanik:</h6>            
+            </div>
+            <div class="col-md-9">
+                <h6>{{$examination->Pupil}}</h6>            
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="col-md-3">
+                <h6>Dinamika pokreta ploda:</h6>            
+            </div>
+            <div class="col-md-9">
+                <h6>{{$examination->FD}}</h6>            
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="col-md-3">
+                <h6>Pregled fetalnog srca:</h6>            
+            </div>
+            <div class="col-md-9">
+                <h6>{{$examination->Ex_Fe_Ha}}</h6>            
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <p>Pregled fetalnog srca: Srce pravilno orijentisano u grudnom košu.
                 Sagledani: četvorošupljinski i petošupljinski presek srca, luk aorte, 
                 presek 3 krvna suda, IVS, srčani zalisci, ostijum primum, širine...?...
                 Levi izlazni protočni trakt definiše izlaz aorte,čija je širina 
@@ -140,37 +138,37 @@
 
         <div class="col-md-12">
             <div class="col-md-3">
-                <h5><strong>Akušerski palpatorni pregled:</strong></h5>            
+                <h6>Akušerski palpatorni pregled:</h6>            
             </div>
             <div class="col-md-9">
-                <h5>{{$examination->AK_PAL}}</h5>            
+                <h6>{{$examination->AK_PAL}}</h6>            
             </div>
         </div>
 
         <div class="col-md-12">
             <div class="col-md-3">
-                <h5><strong>Dijagnoza:</strong></h5>            
+                <h6>Dijagnoza:</h6>            
             </div>
             <div class="col-md-9">
-                <h5>{{$examination->diagnosis}}</h5>            
+                <h6>{{$examination->diagnosis}}</h6>            
             </div>
         </div>
 
         <div class="col-md-12">
             <div class="col-md-3">            
-                <h5><strong>Terapija:</strong></h5>         
+                <h6>Terapija:</h6>         
             </div>
             <div class="col-md-9">            
-                <h5>{{$examination->therapy}}</h5>
+                <h6>{{$examination->therapy}}</h6>
             </div>        
         </div>
 
         <div class="col-md-12">
             <div class="col-md-3">
-                <h5><strong>Napomena:</strong></h5>            
+                <h6>Napomena:</h6>            
             </div>
             <div class="col-md-9">
-                <h5>{{$examination->note}}</h5>
+                <h6>{{$examination->note}}</h6>
             </div>
         </div>
 
@@ -178,7 +176,7 @@
         <br>
         <div class="visible-print-block">          
             <h6 class="text-left">Novi Sad,<br>
-                {{$examination->created_at}}</h6>
+         {{$examination->created_at}}</h6>
             <h6 class="text-right">{{$examination->patient->user->name}}</h6>
             <hr>
 

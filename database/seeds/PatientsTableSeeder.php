@@ -10,19 +10,21 @@ class PatientsTableSeeder extends Seeder {
      * @return void
      */
     public function run() {
+          DB::table('patients')->delete() ;
+        
         $faker = Faker\Factory::create('sr_Latn_RS'); // create a French faker
 
-        $limit = 9999;
+        $limit = 10000;
 
         for ($i = 0; $i < $limit; $i++) {
             DB::table('patients')->insert([ //,
                 'name' => $faker->name,
                 'date_of_birth' => $faker->dateTimeThisDecade,
-                'address' => $faker->address,
-                'place' => $faker->city,
+                'address' => $faker->street,
+                'place' => $faker->cityName,
                 'phone' => $faker->phoneNumber,
-                'profession' => "-",
-                'blood_type' => "0",
+                'profession' => "-" ,
+                'blood_type' => "AB",
                 'rh' => "+",
                 'drug_susceptibility' => "Negira",
                 'childbirth' => $faker->numberBetween(0,5),

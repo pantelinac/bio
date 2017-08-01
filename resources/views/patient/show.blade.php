@@ -41,9 +41,9 @@
             <hr>
             Osetljivost na lekove:
             <hr>
-            Licna anamenta:
+            Licna anamneza:
             <hr>
-            Porodicna anamenta:
+            Porodicna anamneza:
             <hr>
             PM:
             <hr>

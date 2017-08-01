@@ -53,11 +53,11 @@
             {{Form::text('drug_susceptibility', null, 
             array('class'=>'form-control','required'=>'','maxlength'=>'255'))}}
 
-            {{Form::label('personal_anament', 'Lična anamenta:')}}
+            {{Form::label('personal_anament', 'Lična anamneza:')}}
             {{Form::text('personal_anament', null, 
             array('class'=>'form-control','required'=>'','maxlength'=>'255'))}}
 
-            {{Form::label('family_anament', 'Porodicna anamenta:')}}
+            {{Form::label('family_anament', 'Porodicna anamneza:')}}
             {{Form::text('family_anament', null, 
             array('class'=>'form-control','required'=>'','maxlength'=>'255'))}}
         

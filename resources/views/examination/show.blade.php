@@ -31,8 +31,8 @@
             <h5>Zanimanje: <strong>{{$examination->patient->profession}}</strong></h5>
             <h5>Porođaj: <strong>{{$examination->patient->childbirth}}</strong></h5>
             <h5>Abortus: <strong>{{$examination->patient->abortion}}</strong></h5>
-            <h5>Lična anamenta: <strong>{{$examination->patient->personal_anament}}</strong></h5>
-            <h5>Porodicna anamenta: <strong>{{$examination->patient->family_anament}}</strong></h5>
+            <h5>Lična anamneza: <strong>{{$examination->patient->personal_anament}}</strong></h5>
+            <h5>Porodicna anamneza: <strong>{{$examination->patient->family_anament}}</strong></h5>
         </div>
 
         <hr>
@@ -42,55 +42,55 @@
 
         <div>
             <div class="col-md-3">
-                <h5>Ultrasonografski nalaz:</h5>            
+                <h4><strong>Ultrasonografski nalaz:</strong></h4>            
             </div>
             <div class="col-md-9">            
-                <h5>{{$examination->ultrasonographic_finding}}</h5>           
+                <h4>{{$examination->ultrasonographic_finding}}</h4>           
             </div>
         </div>
         
         <div>
             <div class="col-md-3">            
-                <h5>Nalaz u spekulima:</h5>            
+                <h4><strong>Nalaz u spekulima:</strong></h4>            
             </div>        
             <div class="col-md-9">           
-                <h5>{{$examination->speculators_finding}}</h5>            
+                <h4>{{$examination->speculators_finding}}</h4>            
             </div>
         </div>
 
         <div>
             <div class="col-md-3">            
-                <h5>Gin-Palp. nalaz:</h5>            
+                <h4><strong>Gin-Palp. nalaz:</strong></h4>            
             </div>
             <div class="col-md-9"> 
-                <h5>{{$examination->gin_palp_finding}}</h5>            
+                <h4>{{$examination->gin_palp_finding}}</h4>            
             </div>
         </div>
 
         <div>
             <div class="col-md-3">
-                <h5>Dijagnoza:</h5>            
+                <h4><strong>Dijagnoza:</strong></h4>            
             </div>
             <div class="col-md-9">
-                <h5>{{$examination->diagnosis}}</h5>            
+                <h4>{{$examination->diagnosis}}</h4>            
             </div>
         </div>
 
         <div>
             <div class="col-md-3">            
-                <h5>Terapija:</h5>         
+                <h4><strong>Terapija:</strong></h4>         
             </div>
             <div class="col-md-9">            
-                <h5>{{$examination->therapy}}</h5>
+                <h4>{{$examination->therapy}}</h4>
             </div>        
         </div>
 
         <div>
             <div class="col-md-3">
-                <h5>Napomena:</h5>            
+                <h4><strong>Napomena:</strong></h4>            
             </div>
             <div class="col-md-9">
-                <h5>{{$examination->note}}</h5>
+                <h4>{{$examination->note}}</h4>
             </div>
         </div>
 

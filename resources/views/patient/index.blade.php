@@ -37,15 +37,11 @@
                 <th>Adresa</th>
                 <th>Mesto</th>
                 <th>Telefon</th>
-                <th>Profesija</th>
                 <th>Krvna grupa</th>
                 <th>RH</th>
                 <th>Osetljivost na lekove</th>
                 <th>Porodjaj</th>
                 <th>Abortus</th>
-                <th>Licna anamenta</th>
-                <th>Porodicna anamenta</th>
-                <th>PM</th>
                 <th>Created At</th>
                 <th></th>
                 </thead>
@@ -66,15 +62,11 @@
                         <th>{{ $patient->address }}</th>
                         <th>{{ $patient->place }}</th>
                         <th>{{ $patient->phone }}</th>
-                        <th>{{ $patient->profession }}</th>
                         <th>{{ $patient->blood_type }}</th>
                         <th>{{ $patient->rh }}</th>
                         <th>{{ $patient->drug_susceptibility }}</th>
                         <th>{{ $patient->childbirth }}</th>
                         <th>{{ $patient->abortion }}</th>
-                        <th>{{ $patient->personal_anament }}</th>
-                        <th>{{ $patient->family_anament }}</th>
-                        <th>{{ $patient->date_last_period }}</th>
 
 
                         <td>{{ date('j M Y  G:i', strtotime($patient->created_at)) }}</td>

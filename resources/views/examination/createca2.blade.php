@@ -101,7 +101,7 @@
 
 
         {{Form::label('AFI', 'Kol. plod. tečnosti:')}}
-        {{Form::text('TSR', null, 
+        {{Form::text('AFI', null, 
             array('class'=>'form-control','required'=>'','maxlength'=>'100'))}}
 
         {{Form::label('Pupil', 'Pupčanik:')}}
