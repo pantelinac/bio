@@ -60,7 +60,7 @@
 
         <div>
             <div class="col-md-3">            
-                <h4><strong>Gin-Palp. nalaz:</strong></h4>            
+                <h4><strong>Ginekološki Palpatorni pregled:</strong></h4>            
             </div>
             <div class="col-md-9"> 
                 <h4>{{$examination->gin_palp_finding}}</h4>            
@@ -85,14 +85,7 @@
             </div>        
         </div>
 
-        <div>
-            <div class="col-md-3">
-                <h4><strong>Napomena:</strong></h4>            
-            </div>
-            <div class="col-md-9">
-                <h4>{{$examination->note}}</h4>
-            </div>
-        </div>
+
 
         <br>
         <div class="visible-print-block">          

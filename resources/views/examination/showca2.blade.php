@@ -28,23 +28,6 @@
             <h6>PM: <strong>{{$examination->patient->date_last_period}}</strong></h6>
         </section>
 
-
-
-
-
-        <!--        <div class="col-md-6">
-                    <h6>Broj kartona: <strong>{{$examination->patient->id}}</strong></h6>
-                    <h6>Datum rodjenja: <strong>{{$examination->patient->date_of_birth}}</strong></h6>
-                    <h6>Adresa: <strong>{{$examination->patient->address}}, 
-                            {{$examination->patient->place}}</strong></h6>
-                </div>
-                <div class="col-md-6">
-                    <h6>Krvna grupa i RH faktor: <strong>{{$examination->patient->blood_type}}, 
-                            {{$examination->patient->rh}}</strong></h6>
-                    <h6>Osetljivost na lekove: <strong>{{$examination->patient->drug_susceptibility}}</strong></h6>
-                    <h6>PM: <strong>{{$examination->patient->date_last_period}}</strong></h6>
-                </div> -->
-
         <div class="col-md-6 hidden-print">
             <h6>Telefon: <strong>{{$examination->patient->phone}}</strong></h6>            
             <h6>Porođaj: <strong>{{$examination->patient->childbirth}}</strong></h6>
@@ -72,64 +55,28 @@
         </div>
 
         <div class="col-md-12">
-            <p>Sagledani: Očna sočiva, kontinuitet prednjeg trbušnog zida i 
+            <p><strong>Sagledani su: </strong>Očna sočiva, kontinuitet prednjeg trbušnog zida i 
                 dijafragme, pluća, želudac, GIT, mokraćna bešika, bubrezi. 
                 Kranijum, lice, vrat, kičmeni stub i ekstremiteti deluju uredno.</p>
-            <p>Insercija posteljice: {{$examination->Ins_pos}}<br>
-                Količina plodove tečnosti: {{$examination->AFI}}<br>
-                Pupčanik: {{$examination->Pupil}}<br>
-                Dinamika pokreta ploda: {{$examination->FD}}</p>
+            <p><strong>Insercija posteljice: </strong>{{$examination->Ins_pos}}<br>
+                <strong>Količina plodove tečnosti: </strong>{{$examination->AFI}}<br>
+                <strong>Pupčanik: </strong>{{$examination->Pupil}}<br>
+                <strong>Dinamika pokreta ploda: </strong>{{$examination->FD}}</p>
         </div>
 
-        <!--        <div class="col-md-12">
-                    <div class="col-md-3">
-                        <h6>Insercija posteljice:</h6>            
-                    </div>
-                    <div class="col-md-9">
-                        <h6>{{$examination->Ins_pos}}</h6>            
-                    </div>
-                </div>-->
-        <!--
-                <div class="col-md-12">
-                    <div class="col-md-3">
-                        <h6>Količina plodove tečnosti:</h6>            
-                    </div>
-                    <div class="col-md-9">
-                        <h6>{{$examination->AFI}}</h6>            
-                    </div>
-                </div>-->
-
-        <!--        <div class="col-md-12">
-                    <div class="col-md-3">
-                        <h6>Pupčanik:</h6>            
-                    </div>
-                    <div class="col-md-9">
-                        <h6>{{$examination->Pupil}}</h6>            
-                    </div>
-                </div>-->
-
-        <!--        <div class="col-md-12">
-                    <div class="col-md-3">
-                        <h6>Dinamika pokreta ploda:</h6>            
-                    </div>
-                    <div class="col-md-9">
-                        <h6>{{$examination->FD}}</h6>            
-                    </div>
-                </div>-->
-
-        <!--        <div class="col-md-12">
-                    <div class="col-md-3">
-                        <h6>Pregled fetalnog srca:</h6>            
-                    </div>
-                    <div class="col-md-9">
-                        <h6>{{$examination->Ex_Fe_Ha}}</h6>            
-                    </div>
-                </div>-->
+        <div class="col-md-12">
+            <div class="col-md-3">
+                <h5>Pregled fetalnog srca:</h5>            
+            </div>
+            <div class="col-md-9">
+                <h5>{{$examination->Ex_Fe_Ha}}</h5>            
+            </div>
+        </div>
 
         <div class="col-md-12">
             <p><strong>Pregled fetalnog srca:</strong> Srce pravilno orijentisano u grudnom košu.
-                Sagledani: četvorošupljinski i petošupljinski presek srca, luk aorte, 
-                presek 3 krvna suda, IVS, srčani zalisci, ostijum primum, širine...?...
+                Sagledani su: četvorošupljinski i petošupljinski presek srca, luk aorte, 
+                presek 3 krvna suda, IVS, srčani zalisci, <strong>Fo. {{$examination->Fo}}mm.</strong>
                 Levi izlazni protočni trakt definiše izlaz aorte,čija je širina 
                 <strong>{{$examination->Width_of_aorta}} mm</strong>. Desni izlazni 
                 protočni trakt definiše izlaz pulmonalnog stabla širine 
@@ -138,7 +85,7 @@
             </p>
         </div>
 
-        <div class="col-md-12">
+        <div class="col-md-12 text-primary">
             <div class="col-md-3">
                 <h5><strong>Akušerski palpatorni pregled:</strong></h5>            
             </div>
@@ -163,15 +110,6 @@
             <div class="col-md-9">            
                 <h5>{{$examination->therapy}}</h5>
             </div>        
-        </div>
-
-        <div class="col-md-12">
-            <div class="col-md-3">
-                <h5><strong>Napomena:</strong></h5>            
-            </div>
-            <div class="col-md-9">
-                <h5>{{$examination->note}}</h5>
-            </div>
         </div>
 
 

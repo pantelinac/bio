@@ -27,7 +27,7 @@
             {{Form::textarea('speculators_finding', null, 
             array('class'=>'form-control','rows'=>'3','required'=>'','maxlength'=>'255'))}}
 
-            {{Form::label('gin_palp_finding', 'Gin-Palp nalaz:')}}
+            {{Form::label('gin_palp_finding', 'Ginekološki Palpatorni pregled:')}}
             {{Form::textarea('gin_palp_finding', null, 
             array('class'=>'form-control','rows'=>'3','required'=>'','maxlength'=>'255'))}}
 
@@ -37,11 +37,8 @@
             
             {{Form::label('therapy', 'Terapija:')}}
             {{Form::textarea('therapy', null, 
-            array('class'=>'form-control','rows'=>'3','required'=>'','maxlength'=>'255'))}}
-            
-            {{Form::label('note', 'Napomena:')}}
-            {{Form::textarea('note', null, 
             array('class'=>'form-control form-spacing-boto','rows'=>'3','required'=>'','maxlength'=>'255'))}}
+
                 
         
         {{Form::submit('Sačuvaj izveštaj', array(

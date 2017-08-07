@@ -116,11 +116,8 @@
             
             {{Form::label('therapy', 'Terapija:')}}
             {{Form::textarea('therapy', null, 
-            array('class'=>'form-control','rows'=>'2','required'=>'','maxlength'=>'255'))}}
-            
-            {{Form::label('note', 'Napomena:')}}
-            {{Form::textarea('note', null, 
-            array('class'=>'form-control form-spacing-boto','rows'=>'2','maxlength'=>'255'))}}
+            array('class'=>'form-control form-spacing-boto','rows'=>'2','required'=>'','maxlength'=>'255'))}}            
+
                 
         </div>
         {{Form::submit('Sačuvaj izveštaj', array(

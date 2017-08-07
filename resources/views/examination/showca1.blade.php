@@ -50,9 +50,9 @@
             <h6><strong>Biometrija ploda :mm</strong></h6>
             <h6>
                 <strong>
-                    CRL: {{$examination->CRL}} mm, BPD: {{$examination->BPD}} mm, 
-                    Hem: {{$examination->Hem}} mm, OFD: {{$examination->OFD}} mm, 
-                    HC: {{$examination->HC}} mm, FL: {{$examination->FL}} mm, 
+                    CRL: {{$examination->CRL}} , BPD: {{$examination->BPD}} , 
+                    Hem: {{$examination->Hem}} , OFD: {{$examination->OFD}} , 
+                    HC: {{$examination->HC}} , FL: {{$examination->FL}} , 
                     AC: {{$examination->CRL}} ,TM: {{$examination->TM}} g
                 </strong>                
             </h6>
@@ -72,46 +72,15 @@
 
         <div>
             <hr>
-            <p>Sagledani su: očna sočiva, kontinuitet prednjeg trbušnog zida i dijafragme,
+            <p><strong>Sagledani su:</strong> očna sočiva, kontinuitet prednjeg trbušnog zida i dijafragme,
                 želudac, mokraćna bešika. Kranijum, kičmeni stub, ekstremiteti deluju uredno.
-                FHR+ {{$examination->FHR}} /min pokreti ploda. 
-                Sagledan četvorošupljinski presek srca. Molim, uraditi free beta 
-                HCG i PAPP-A. Kontrola sa nalazima. </p>
-            <p>Insercija trofoblasta: {{$examination->Ins_tro}}, 
+                <strong>FHR+ {{$examination->FHR}} /min </strong>pokreti ploda. 
+                Sagledan četvorošupljinski presek srca. Insercija trofoblasta: {{$examination->Ins_tro}}, 
                 Količina plodove tečnost: {{$examination->AFI}}, 
-                Dinamika pokreta ploda: {{$examination->FD}}</p>
+                Dinamika pokreta ploda: {{$examination->FD}}. Molim, uraditi free beta 
+                HCG i PAPP-A. Kontrola sa nalazima. </p>            
         </div>  
-        <!--        <div class="col-md-12">
-                    <p>Količina plodove tečnost: {{$examination->AFI}}</p>
-                    <p>Insercija trofoblasta: {{$examination->Ins_tro}}</p>
-                    <p>Dinamika pokreta ploda: {{$examination->FD}}</p>
-                </div>-->
-        <!--        <div class="col-md-12">
-                    <div>
-                        <h6 class="col-md-3">Količina plodove tečnost:</h6>            
-                    </div>
-                    <div>
-                        <h6 class="col-md-9">{{$examination->AFI}}</h6>            
-                    </div>
-                </div>-->
 
-        <!--        <div class="col-md-12">
-                    <div>
-                        <h6 class="col-md-3">Insercija trofoblasta:</h6>            
-                    </div>
-                    <div>
-                        <h6 class="col-md-9">{{$examination->Ins_tro}}</h6>            
-                    </div>
-                </div>-->
-
-        <!--        <div class="col-md-12">
-                    <div>
-                        <h6 class="col-md-3">Dinamika pokreta ploda:</h6>            
-                    </div>
-                    <div>
-                        <h6 class="col-md-9">{{$examination->FD}}</h6>            
-                    </div>
-                </div>-->
 
         <div class="col-md-12">
             <div class="col-md-3">
@@ -140,14 +109,7 @@
             </div>        
         </div>
 
-        <div class="col-md-12">
-            <div class="col-md-3">
-                <h5><strong>Napomena:</strong></h5>            
-            </div>
-            <div class="col-md-9">
-                <h5>{{$examination->note}}</h5>
-            </div>
-        </div>
+
 
         <br>
         <div class="visible-print-block">          
