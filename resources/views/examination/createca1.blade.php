@@ -88,7 +88,7 @@
             array('class'=>'form-control','required'=>'','numeric'=>''))}}
             
             {{Form::label('AFI', 'Količina plod tečnosti:')}}
-            {{Form::text('TSR', null, 
+            {{Form::text('AFI', null, 
             array('class'=>'form-control','required'=>'','maxlength'=>'100'))}}
             
             {{Form::label('Ins_tro', 'Insercija trofoblasta:')}}
@@ -108,7 +108,7 @@
 
             {{Form::label('AK_PAL', 'Akušerski Palpatorni pregled:')}}
             {{Form::textarea('AK_PAL', null, 
-            array('class'=>'form-control','rows'=>'2','required'=>'','maxlength'=>'100'))}}
+            array('class'=>'form-control','rows'=>'2','required'=>'','maxlength'=>'255'))}}
 
             {{Form::label('diagnosis', 'Dijagnoza:')}}
             {{Form::textarea('diagnosis', null, 

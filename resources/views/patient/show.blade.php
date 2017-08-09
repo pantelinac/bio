@@ -28,7 +28,7 @@
     <div class="col-md-8">
 
         <div class="col-md-5 h5">
-            Datum rodjenja:
+            Datum rođenja:
             <hr>
 
             Adresa: 
@@ -51,7 +51,7 @@
             <hr>
             RH:
             <hr>
-            Porodjaj:
+            Porođaj:
             <hr>
             Abortus:
             <hr>

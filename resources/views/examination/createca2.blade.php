@@ -134,12 +134,12 @@
 
             {{Form::label('Ex_Fe_Ha', 'Pregled fetalno srca:')}}
             {{Form::textarea('Ex_Fe_Ha', 
-                "Srce pravilno orijentisano u grudnom košu. Sagledani: četvorošupljinski i petošupljinski presek srca, luk aorte, presek 3 krvna suda, IVS, srčani zalisci, Fo. 41mm. Levi izlazni protočni trakt definiše izlaz aorte,čija je širina 55 mm. Desni izlazni protočni trakt definiše izlaz pulmonalnog stabla širine 55 mm. Protok kroz valvule laminaran. ", 
-            array('class'=>'form-control','rows'=>'2','required'=>'','maxlength'=>'255'))}}
+                "Srce pravilno orijentisano u grudnom košu. Sagledani: četvorošupljinski i petošupljinski presek srca, luk aorte, presek 3 krvna suda, IVS, srčani zalisci. ", 
+            array('class'=>'form-control','rows'=>'3','required'=>'','maxlength'=>'255'))}}
 
             {{Form::label('AK_PAL', 'Akušerski Palpatorni pregled:')}}
             {{Form::textarea('AK_PAL', null, 
-            array('class'=>'form-control','rows'=>'2','required'=>'','maxlength'=>'100'))}}
+            array('class'=>'form-control','rows'=>'2','required'=>'','maxlength'=>'255'))}}
 
             {{Form::label('diagnosis', 'Dijagnoza:')}}
             {{Form::textarea('diagnosis', null, 

@@ -38,3 +38,16 @@ textarea.parsley-error {
 .padding{
     padding-right: 2px;
 }
+
+@media print
+{    
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+    
+    .background-colorr
+    {
+        background-color: #c0c0c0 !important;
+    }
+}

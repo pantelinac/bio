@@ -38,8 +38,7 @@ class ExaminationController extends Controller {
             'speculators_finding' => 'sometimes|max:255',
             'gin_palp_finding' => 'sometimes|max:255',
             'diagnosis' => 'sometimes|max:255',
-            'therapy' => 'sometimes|max:255',
-            'note' => 'sometimes|max:255',
+            'therapy' => 'sometimes|max:255'          
         ));
 
         // Type of exam ( OP, EUZ1 or EUZ2 )
@@ -55,7 +54,6 @@ class ExaminationController extends Controller {
         $examination->gin_palp_finding = $request->gin_palp_finding;
         $examination->diagnosis = $request->diagnosis;
         $examination->therapy = $request->therapy;
-        $examination->note = $request->note;
         $examination->Exam_type = $exam_type;
         $examination->patient()->associate($patient);
 
@@ -148,10 +146,10 @@ class ExaminationController extends Controller {
             'AFI' => 'sometimes|max:100',
             'Ins_tro' => 'sometimes|max:100',
             'FD' => 'sometimes|max:100',
-            'AK_PAL' => 'sometimes|max:100',
+            'AK_PAL' => 'sometimes|max:255',
             'diagnosis' => 'sometimes|max:255',
-            'therapy' => 'sometimes|max:255',
-            'note' => 'sometimes|max:255'
+            'therapy' => 'sometimes|max:255'
+
         ));
 
         // Type of exam ( OP, EUZ1 or EUZ2 )
@@ -182,7 +180,6 @@ class ExaminationController extends Controller {
         $examination->AK_PAL = $request->AK_PAL;
         $examination->diagnosis = $request->diagnosis;
         $examination->therapy = $request->therapy;
-        $examination->note = $request->note;
         $examination->Exam_type = $exam_type;
         $examination->patient()->associate($patient);
 
@@ -232,14 +229,14 @@ class ExaminationController extends Controller {
             'Ins_pos' => 'sometimes|max:255',
             'AFI' => 'sometimes|max:100',
             'Pupil' => 'sometimes|max:255',
+            'Fo' => 'sometimes|numeric',
             'FD' => 'sometimes|max:100',
             'Ex_Fe_Ha' => 'sometimes|max:255',
             'Width_of_aorta' => 'sometimes|numeric',
             'Pul_tree' => 'sometimes|numeric',
-            'AK_PAL' => 'sometimes|max:100',
+            'AK_PAL' => 'sometimes|max:255',
             'diagnosis' => 'sometimes|max:255',
-            'therapy' => 'sometimes|max:255',
-            'note' => 'sometimes|max:255'
+            'therapy' => 'sometimes|max:255'            
         ));
 
         // Type of exam ( OP, EUZ1 or EUZ2 )
@@ -270,14 +267,14 @@ class ExaminationController extends Controller {
         $examination->Ins_pos = $request->Ins_pos;
         $examination->AFI = $request->AFI;
         $examination->Pupil = $request->Pupil;
+        $examination->Fo = $request->Fo;
         $examination->FD = $request->FD;
         $examination->Ex_Fe_Ha = $request->Ex_Fe_Ha;
         $examination->Width_of_aorta = $request->Width_of_aorta;
         $examination->Pul_tree = $request->Pul_tree;
         $examination->AK_PAL = $request->AK_PAL;
         $examination->diagnosis = $request->diagnosis;
-        $examination->therapy = $request->therapy;
-        $examination->note = $request->note;
+        $examination->therapy = $request->therapy;        
         $examination->Exam_type = $exam_type;
         $examination->patient()->associate($patient);
 

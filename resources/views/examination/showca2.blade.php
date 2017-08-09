@@ -3,6 +3,12 @@
 
 @section('title', '|Ciljani akušerski ultrazvučni pregled u drugom i trećem trimestru trudnoće')
 
+@section('stylesheets')
+
+{{ Html::style('css/parsley.css')}}
+
+@endsection
+
 @section('content')
 
 <div class="row">    
@@ -11,13 +17,13 @@
         <img  class="center-block visible-print-block" 
               src="{{ asset('images/bio.png') }}" height="100" width="350"/>
 
-        <h4 class="text-center"><strong>CILJANI AKUŠERSKI ULTRAZVUČNI PREGLED U DRUGOM I TREĆEM TRIMESTRU TRUDNOĆE</strong></h4>
+        <h4 class="text-center" ><strong>CILJANI AKUŠERSKI ULTRAZVUČNI PREGLED U DRUGOM I TREĆEM TRIMESTRU TRUDNOĆE</strong></h4>
 
         <br>
-        <h4><small>Prezime i ime: </small><strong>{{$examination->patient->name}}</strong></h4>
+        <h4 class="background-colorr"><small>Prezime i ime: </small><strong>{{$examination->patient->name}}</strong></h4>
         <section class="col-md-6">
             <h6>Broj kartona: <strong>{{$examination->patient->id}}</strong></h6>
-            <h6>Datum rodjenja: <strong>{{$examination->patient->date_of_birth}}</strong></h6>
+            <h6>Datum rođenja: <strong>{{$examination->patient->date_of_birth}}</strong></h6>
             <h6>Adresa: <strong>{{$examination->patient->address}}, 
                     {{$examination->patient->place}}</strong></h6>
         </section>
@@ -39,8 +45,10 @@
             <h6>Porodicna anamneza: <strong>{{$examination->patient->family_anament}}</strong></h6>
         </div>
 
-        <div class="col-md-12">
-            <hr>
+        <hr>
+
+        <div class="col-md-12 background-colorr">
+
             <h6><strong>Biometrija ploda :mm</strong></h6>
             <h6><strong>BPD : {{$examination->BPD}} , Hem : {{$examination->Hem}} , 
                     OFD : {{$examination->OFD}} , HC : {{$examination->HC}} , 
@@ -57,35 +65,25 @@
         <div class="col-md-12">
             <p><strong>Sagledani su: </strong>Očna sočiva, kontinuitet prednjeg trbušnog zida i 
                 dijafragme, pluća, želudac, GIT, mokraćna bešika, bubrezi. 
-                Kranijum, lice, vrat, kičmeni stub i ekstremiteti deluju uredno.</p>
-            <p><strong>Insercija posteljice: </strong>{{$examination->Ins_pos}}<br>
-                <strong>Količina plodove tečnosti: </strong>{{$examination->AFI}}<br>
-                <strong>Pupčanik: </strong>{{$examination->Pupil}}<br>
+                Kranijum, lice, vrat, kičmeni stub i ekstremiteti deluju uredno.
+                <strong>Insercija posteljice: </strong>{{$examination->Ins_pos}} , 
+                <strong>Količina plodove tečnosti: </strong>{{$examination->AFI}} ,                 
+                <strong>Pupčanik: </strong>{{$examination->Pupil}} ,
                 <strong>Dinamika pokreta ploda: </strong>{{$examination->FD}}</p>
         </div>
 
-        <div class="col-md-12">
-            <div class="col-md-3">
-                <h5>Pregled fetalnog srca:</h5>            
-            </div>
-            <div class="col-md-9">
-                <h5>{{$examination->Ex_Fe_Ha}}</h5>            
-            </div>
-        </div>
-
-        <div class="col-md-12">
-            <p><strong>Pregled fetalnog srca:</strong> Srce pravilno orijentisano u grudnom košu.
-                Sagledani su: četvorošupljinski i petošupljinski presek srca, luk aorte, 
-                presek 3 krvna suda, IVS, srčani zalisci, <strong>Fo. {{$examination->Fo}}mm.</strong>
+        <div class="col-md-12 background-colorr">
+            <p><strong>Pregled fetalnog srca:</strong> {{$examination->Ex_Fe_Ha}}                
+                <strong>Fo. {{$examination->Fo}} mm.</strong>
                 Levi izlazni protočni trakt definiše izlaz aorte,čija je širina 
                 <strong>{{$examination->Width_of_aorta}} mm</strong>. Desni izlazni 
                 protočni trakt definiše izlaz pulmonalnog stabla širine 
-                <strong>{{$examination->Width_of_aorta}} mm.</strong>
+                <strong>{{$examination->Pul_tree}} mm.</strong>
                 Protok kroz valvule laminaran.
             </p>
         </div>
 
-        <div class="col-md-12 text-primary">
+        <div class="col-md-12">
             <div class="col-md-3">
                 <h5><strong>Akušerski palpatorni pregled:</strong></h5>            
             </div>
@@ -141,4 +139,8 @@
     </div>
 </div>
 
+@endsection
+
+@section('scripts')
+{!! Html::script('js/parsley.min.js') !!}
 @endsection

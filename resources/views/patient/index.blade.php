@@ -33,14 +33,14 @@
                 <thead>
                 <th>#</th>
                 <th>Prezime i ime</th>                
-                <th>Datum rodjenja</th>
+                <th>Datum rođenja</th>
                 <th>Adresa</th>
                 <th>Mesto</th>
                 <th>Telefon</th>
                 <th>Krvna grupa</th>
                 <th>RH</th>
                 <th>Osetljivost na lekove</th>
-                <th>Porodjaj</th>
+                <th>Porođaj</th>
                 <th>Abortus</th>
                 <th>Created At</th>
                 <th></th>

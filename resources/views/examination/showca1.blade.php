@@ -2,6 +2,11 @@
 
 @section('title', '|Ciljani akušerski ultrazvučni pregled u prvom trimestru trudnoće')
 
+@section('stylesheets')
+
+{{ Html::style('css/parsley.css')}}
+
+@endsection
 
 @section('content')
 
@@ -14,10 +19,10 @@
         <h4 class="text-center"><strong>CILJANI AKUŠERSKI ULTRAZVUČNI PREGLED U PRVOM TRIMESTRU TRUDNOĆE</strong></h4>
 
         <br>
-        <h4><small>Prezime i ime: </small><strong>{{$examination->patient->name}}</strong></h4>
+        <h4 class="background-colorr"><small>Prezime i ime: </small><strong>{{$examination->patient->name}}</strong></h4>
         <section class="col-md-6">
             <h6>Broj kartona: <strong>{{$examination->patient->id}}</strong></h6>
-            <h6>Datum rodjenja: <strong>{{$examination->patient->date_of_birth}}</strong></h6>
+            <h6>Datum rođenja: <strong>{{$examination->patient->date_of_birth}}</strong></h6>
             <h6>Adresa: <strong>{{$examination->patient->address}}, 
                     {{$examination->patient->place}}</strong></h6>
         </section>
@@ -43,10 +48,10 @@
             <h6>Porodicna anamneza: <strong>{{$examination->patient->family_anament}}</strong></h6>
         </div>
 
+        <hr>
 
-
-        <div class="col-md-12">
-            <hr>
+        <div class="col-md-12 background-colorr">
+            
             <h6><strong>Biometrija ploda :mm</strong></h6>
             <h6>
                 <strong>
@@ -61,7 +66,7 @@
 
 
         <div class="col-md-12">
-            <hr>
+            
             <h5><strong>
                     NT : {{$examination->NT}} mm <br>
                     Nosna kost : {{$examination->NB}} <br>
@@ -75,9 +80,9 @@
             <p><strong>Sagledani su:</strong> očna sočiva, kontinuitet prednjeg trbušnog zida i dijafragme,
                 želudac, mokraćna bešika. Kranijum, kičmeni stub, ekstremiteti deluju uredno.
                 <strong>FHR+ {{$examination->FHR}} /min </strong>pokreti ploda. 
-                Sagledan četvorošupljinski presek srca. Insercija trofoblasta: {{$examination->Ins_tro}}, 
-                Količina plodove tečnost: {{$examination->AFI}}, 
-                Dinamika pokreta ploda: {{$examination->FD}}. Molim, uraditi free beta 
+                Sagledan četvorošupljinski presek srca. <strong>Insercija trofoblasta:</strong> {{$examination->Ins_tro}}, 
+                <strong>Količina plodove tečnost: </strong>{{$examination->AFI}}, 
+                <strong>Dinamika pokreta ploda: </strong>{{$examination->FD}}. Molim, uraditi free beta 
                 HCG i PAPP-A. Kontrola sa nalazima. </p>            
         </div>  
 
@@ -141,4 +146,8 @@
     </div>
 </div>
 
+@endsection
+
+@section('scripts')
+{!! Html::script('js/parsley.min.js') !!}
 @endsection

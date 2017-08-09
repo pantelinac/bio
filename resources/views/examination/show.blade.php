@@ -2,6 +2,11 @@
 
 @section('title', '|Opšti Pregled')
 
+@section('stylesheets')
+
+{{ Html::style('css/parsley.css')}}
+
+@endsection
 
 @section('content')
 
@@ -11,13 +16,13 @@
         <img  class="center-block visible-print-block" 
               src="{{ asset('images/bio.png') }}" height="100" width="350"/>
         
-        <h2 class="text-center">NALAZ LEKARA SPECIJALISTE</h2>
+        <h4 class="text-center"><strong>NALAZ LEKARA SPECIJALISTE</strong></h4>
         <br>
-        <h3><small>Prezime i ime: </small><strong>{{$examination->patient->name}}</strong></h3>
+        <h4 class="background-colorr"><small>Prezime i ime: </small><strong>{{$examination->patient->name}}</strong></h4>
 
         <div class="col-md-6">
             <h5>Broj kartona: <strong>{{$examination->patient->id}}</strong></h5>
-            <h5>Datum rodjenja: <strong>{{$examination->patient->date_of_birth}}</strong></h5>
+            <h5>Datum rođenja: <strong>{{$examination->patient->date_of_birth}}</strong></h5>
             <h5>Adresa: <strong>{{$examination->patient->address}}, 
                     {{$examination->patient->place}}</strong></h5>
             <h5>Krvna grupa i RH faktor: <strong>{{$examination->patient->blood_type}}, 
@@ -98,4 +103,8 @@
 </div>
 
 
+@endsection
+
+@section('scripts')
+{!! Html::script('js/parsley.min.js') !!}
 @endsection

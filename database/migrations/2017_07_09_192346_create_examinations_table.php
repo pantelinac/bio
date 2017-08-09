@@ -14,6 +14,8 @@ class CreateExaminationsTable extends Migration {
         Schema::create('examinations', function (Blueprint $table) {
             //Basic controll
             $table->increments('id');
+            $table->string('Exam_type',10)->nullable();
+            
             $table->string('ultrasonographic_finding')->nullable();
             $table->string('speculators_finding')->nullable();
             $table->string('gin_palp_finding')->nullable();
@@ -40,7 +42,7 @@ class CreateExaminationsTable extends Migration {
             $table->string('AFI', 100)->nullable();
             $table->string('Ins_tro', 100)->nullable();
             $table->string('FD', 100)->nullable();
-            $table->string('AK_PAL', 100)->nullable();
+            $table->string('AK_PAL')->nullable();
             
             //Second spec controll
             $table->decimal('Va', 4, 0)->nullable();
@@ -55,6 +57,7 @@ class CreateExaminationsTable extends Migration {
             $table->string('Ins_pos')->nullable();
             $table->string('Pupil')->nullable();
             $table->string('Ex_Fe_Ha')->nullable();
+            $table->decimal('Fo', 4, 0)->nullable();
             $table->decimal('Width_of_aorta', 4, 0)->nullable();
             $table->decimal('Pul_tree', 4, 0)->nullable();
             

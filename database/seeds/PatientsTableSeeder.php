@@ -14,7 +14,7 @@ class PatientsTableSeeder extends Seeder {
         
         $faker = Faker\Factory::create('sr_Latn_RS'); // create a French faker
 
-        $limit = 10000;
+        $limit = 10;
 
         for ($i = 0; $i < $limit; $i++) {
             DB::table('patients')->insert([ //,
