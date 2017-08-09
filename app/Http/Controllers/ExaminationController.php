@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use Auth;
 use App\User;
 use App\Patient;
 use App\Examination;
@@ -38,8 +39,10 @@ class ExaminationController extends Controller {
             'speculators_finding' => 'sometimes|max:255',
             'gin_palp_finding' => 'sometimes|max:255',
             'diagnosis' => 'sometimes|max:255',
-            'therapy' => 'sometimes|max:255'          
+            'therapy' => 'sometimes|max:255'
         ));
+
+        $user = Auth::id();
 
         // Type of exam ( OP, EUZ1 or EUZ2 )
         $exam_type = "OP";
@@ -56,6 +59,7 @@ class ExaminationController extends Controller {
         $examination->therapy = $request->therapy;
         $examination->Exam_type = $exam_type;
         $examination->patient()->associate($patient);
+        $examination->user()->associate($user);
 
         $examination->save();
 
@@ -76,8 +80,6 @@ class ExaminationController extends Controller {
         $patient = $examination->patient->id;
 
         return view('examination.show')->withExamination($examination);
-
-
     }
 
     public function showca1($id) {
@@ -149,8 +151,9 @@ class ExaminationController extends Controller {
             'AK_PAL' => 'sometimes|max:255',
             'diagnosis' => 'sometimes|max:255',
             'therapy' => 'sometimes|max:255'
-
         ));
+
+        $user = Auth::id();
 
         // Type of exam ( OP, EUZ1 or EUZ2 )
         $exam_type = "EUZ1";
@@ -182,6 +185,7 @@ class ExaminationController extends Controller {
         $examination->therapy = $request->therapy;
         $examination->Exam_type = $exam_type;
         $examination->patient()->associate($patient);
+        $examination->user()->associate($user);
 
         $examination->save();
 
@@ -236,8 +240,9 @@ class ExaminationController extends Controller {
             'Pul_tree' => 'sometimes|numeric',
             'AK_PAL' => 'sometimes|max:255',
             'diagnosis' => 'sometimes|max:255',
-            'therapy' => 'sometimes|max:255'            
+            'therapy' => 'sometimes|max:255'
         ));
+        $user = Auth::id();
 
         // Type of exam ( OP, EUZ1 or EUZ2 )
         $exam_type = "EUZ2";
@@ -274,9 +279,10 @@ class ExaminationController extends Controller {
         $examination->Pul_tree = $request->Pul_tree;
         $examination->AK_PAL = $request->AK_PAL;
         $examination->diagnosis = $request->diagnosis;
-        $examination->therapy = $request->therapy;        
+        $examination->therapy = $request->therapy;
         $examination->Exam_type = $exam_type;
         $examination->patient()->associate($patient);
+        $examination->user()->associate($user);
 
         $examination->save();
 

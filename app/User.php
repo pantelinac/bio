@@ -4,10 +4,11 @@ namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Patient;
+use App\Examination;
 use App\User;
 
-class User extends Authenticatable
-{
+class User extends Authenticatable {
+
     /**
      * The attributes that are mass assignable.
      *
@@ -25,9 +26,13 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-    
-    public function patient() 
-    {
+
+    public function patient() {
         return $this->hasMany('App\Patient');
     }
+
+    public function examination() {
+        return $this->hasMany('App\Examination');
+    }
+
 }

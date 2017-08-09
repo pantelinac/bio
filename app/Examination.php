@@ -11,4 +11,9 @@ class Examination extends Model
     {
         return $this->belongsTo('App\Patient');
     }
+    
+        public function user() 
+    {
+        return $this->belongsTo('App\User');
+    }
 }

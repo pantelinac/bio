@@ -115,7 +115,7 @@
         <div class="visible-print-block">          
             <h6 class="text-left">Novi Sad,<br>
                 {{$examination->created_at}}</h6>
-            <h6 class="text-right">{{$examination->patient->user->name}}</h6>
+            <h6 class="text-right">{{$examination->user->name}}</h6>
             <hr>
 
             <h6>
