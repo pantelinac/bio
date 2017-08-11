@@ -32,3 +32,8 @@ $compiledPath = __DIR__.'/cache/compiled.php';
 if (file_exists($compiledPath)) {
     require $compiledPath;
 }
+
+// Solving error: 
+// FatalErrorException in Str.php line 69:
+// Maximum function nesting level of '100' reached, aborting!
+ini_set('xdebug.max_nesting_level', 120);
