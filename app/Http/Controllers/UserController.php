@@ -43,7 +43,8 @@ class UserController extends Controller {
         $this->validate($request, array(
             'name' => 'required|max:255|unique:users,name',
             'email' => 'required|email|max:255|unique:users,email',
-            'password' => 'required|min:6'
+            'password' => 'required|min:6|confirmed',
+            'password_confirmation' => 'required|min:6'
         ));
         $user = new User;
 
@@ -51,11 +52,10 @@ class UserController extends Controller {
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
         $user->save();
-
-        $user->makeEmployee('admin');
-
-
+        
         Session::flash('success', 'Podaci pacijenta uspešno sačuvani!');
+        
+        return redirect()->route('users.index');
     }
 
     /**
