@@ -43,20 +43,13 @@ Route::get('{examination_id}/ca1', ['uses' => 'ExaminationController@showca1', '
 Route::get('{examination_id}/ca2', ['uses' => 'ExaminationController@showca2', 'as' => 'examination.showca2']);
 });
 
-//Route::group(['prefix' => 'patient/{patient}'], function() {
-//
-//
-//
-//
-//
-//Route::post('examination',['uses' => 'ExaminationController@store', 'as' => 'examination.store']);
-//Route::get('examination/create', ['uses' => 'ExaminationController@create', 'as' => 'examination.create']);
-//
-//
-//
-//
-//
-//});
+
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
+//Users
+Route::get('users/create', ['uses' => 'UserController@create', 'as' => 'users.create']);
+Route::post('users', ['uses' => 'UserController@store', 'as' => 'users.post']);
+Route::get('users', ['uses' => 'UserController@index', 'as' => 'users.index']);
+Route::delete('users/{user_id}', ['uses' => 'UserController@destroy', 'as' => 'users.destroy']);

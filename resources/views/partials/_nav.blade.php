@@ -43,10 +43,14 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                         {{ Auth::user()->name }} <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
+<!--                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>       -->
+                        @if(Auth::user()->is_admin)
+                        <li><a href="{{ url('/users/create') }}">Novi zaposleni</a></li>
+                        <li><a href="{{ url('/users') }}">Zaposleni</a></li>
                         <li role="separator" class="divider"></li>
+                        @endif
+
                         <li><a href="{{ url('/logout') }}">Odjavi se</a></li>
                     </ul>
                 </li>
