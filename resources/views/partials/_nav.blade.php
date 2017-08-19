@@ -15,6 +15,8 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            @if (Auth::guest())
+            @else
             <ul class="nav navbar-nav">
                 <li class="active"><a href="{{ url('/home') }}">Početna <span class="sr-only">(current)</span></a></li>
                 <li><a href="{{route('patient.index')}}">Pacijenti</a></li>
@@ -31,12 +33,13 @@
                           </ul>-->
                 </li>
             </ul>
+            @endif
             @yield('search_name')
 
             <ul class="nav navbar-nav navbar-right">
                 @if (Auth::guest())
                 <li><a href="{{ url('/login') }}">Login</a></li>
-                <li><a href="{{ url('/register') }}">Register</a></li>
+<!--                <li><a href="{{ url('/register') }}">Register</a></li>-->
                 @else
                 <li><a href="{{ route('patient.create') }}">Novi pacijent</a></li>
                 <li class="dropdown">

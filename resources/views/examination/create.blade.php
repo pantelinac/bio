@@ -21,23 +21,23 @@
         
             {{Form::label('ultrasonographic_finding', 'Ultrasonografski nalaz:')}}
             {{Form::textarea('ultrasonographic_finding', null, 
-            array('class'=>'form-control','rows'=>'3','required'=>'','maxlength'=>'255'))}}
+            array('class'=>'form-control','rows'=>'3','maxlength'=>'255'))}}
             
             {{Form::label('speculators_finding', 'Nalaz u spekulima:')}}
             {{Form::textarea('speculators_finding', null, 
-            array('class'=>'form-control','rows'=>'3','required'=>'','maxlength'=>'255'))}}
+            array('class'=>'form-control','rows'=>'3','maxlength'=>'255'))}}
 
             {{Form::label('gin_palp_finding', 'Ginekološki Palpatorni pregled:')}}
             {{Form::textarea('gin_palp_finding', null, 
-            array('class'=>'form-control','rows'=>'3','required'=>'','maxlength'=>'255'))}}
+            array('class'=>'form-control','rows'=>'3','maxlength'=>'255'))}}
 
             {{Form::label('diagnosis', 'Dijagnoza:')}}
             {{Form::textarea('diagnosis', null, 
-            array('class'=>'form-control','rows'=>'3','required'=>'','maxlength'=>'255'))}}
+            array('class'=>'form-control','rows'=>'3','maxlength'=>'255'))}}
             
             {{Form::label('therapy', 'Terapija:')}}
             {{Form::textarea('therapy', null, 
-            array('class'=>'form-control form-spacing-boto','rows'=>'3','required'=>'','maxlength'=>'255'))}}
+            array('class'=>'form-control form-spacing-boto','rows'=>'3','maxlength'=>'255'))}}
 
                 
         

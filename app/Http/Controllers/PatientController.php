@@ -28,7 +28,9 @@ class PatientController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $patients = Patient::orderBy('id', 'desc')->paginate(10);
+        $user = Auth::id();
+        $patients = Patient::where('user_id', '=',$user)->orderBy('id', 'desc')->paginate(15);
+//        $patients = Patient::orderBy('id', 'desc')->paginate(10);
 
         return view('patient.index')->withPatients($patients);
     }
@@ -83,7 +85,7 @@ class PatientController extends Controller {
         $patient->personal_anament = $request->personal_anament;
         $patient->family_anament = $request->family_anament;
         $patient->date_last_period = $request->date_last_period;
-        $patient->blood_type = $request->blood_type;
+        $patient->blood_type = strtoupper($request->blood_type);
         $patient->rh = $request->rh;
         $patient->childbirth = $request->childbirth;
         $patient->abortion = $request->abortion;

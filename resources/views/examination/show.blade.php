@@ -47,7 +47,7 @@
 
         <div>
             <div class="col-md-3">
-                <h4><strong>Ultrasonografski nalaz:</strong></h4>            
+                <h4 class="background-colorr"><strong>Ultrasonografski nalaz:</strong></h4>            
             </div>
             <div class="col-md-9">            
                 <h4>{{$examination->ultrasonographic_finding}}</h4>           
@@ -56,7 +56,7 @@
         
         <div>
             <div class="col-md-3">            
-                <h4><strong>Nalaz u spekulima:</strong></h4>            
+                <h4 class="background-colorr"><strong>Nalaz u spekulima:</strong></h4>            
             </div>        
             <div class="col-md-9">           
                 <h4>{{$examination->speculators_finding}}</h4>            
@@ -65,7 +65,7 @@
 
         <div>
             <div class="col-md-3">            
-                <h4><strong>Ginekološki Palpatorni pregled:</strong></h4>            
+                <h4 class="background-colorr"><strong>Ginekološki Palpatorni pregled:</strong></h4>            
             </div>
             <div class="col-md-9"> 
                 <h4>{{$examination->gin_palp_finding}}</h4>            
@@ -74,7 +74,7 @@
 
         <div>
             <div class="col-md-3">
-                <h4><strong>Dijagnoza:</strong></h4>            
+                <h4 class="background-colorr"><strong>Dijagnoza:</strong></h4>            
             </div>
             <div class="col-md-9">
                 <h4>{{$examination->diagnosis}}</h4>            
@@ -83,7 +83,7 @@
 
         <div>
             <div class="col-md-3">            
-                <h4><strong>Terapija:</strong></h4>         
+                <h4 class="background-colorr"><strong>Terapija:</strong></h4>         
             </div>
             <div class="col-md-9">            
                 <h4>{{$examination->therapy}}</h4>

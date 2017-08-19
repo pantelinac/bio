@@ -22,13 +22,13 @@
 @section('content')
 
 <div class="row">    
-    <div class='col-md-10 col-md-offset-1'>        
+    <div class='col-md-12'>        
 
         <h1>Pacijenti</h1>
         <hr>
     </div>
     <div class="row">
-        <div class="col-md-10">
+        <div class="col-md-12">
             <table class="table">
                 <thead>
                 <th>#</th>
@@ -42,7 +42,7 @@
                 <th>Osetljivost na lekove</th>
                 <th>Porođaj</th>
                 <th>Abortus</th>
-                <th>Created At</th>
+                <th>Datum upisa</th>
                 <th></th>
                 </thead>
 
@@ -72,7 +72,7 @@
                         <td>{{ date('j M Y  G:i', strtotime($patient->created_at)) }}</td>
                         <td><a 
                                 href="{{ route('patient.edit', $patient->id) }}" 
-                                class="btn btn-default btn-sm btn-warning">Edit</a></td>
+                                class="btn btn-default btn-sm btn-warning">Izmeni</a></td>
                     </tr>
 
                     @endforeach

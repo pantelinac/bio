@@ -24,17 +24,17 @@ class CreateExaminationsTable extends Migration {
             $table->string('note')->nullable();
             
             //First spec controll
-            $table->decimal('CRL', 4, 0)->nullable();
-            $table->decimal('BPD', 4, 0)->nullable();
-            $table->decimal('Hem', 4, 0)->nullable();
-            $table->decimal('OFD', 4, 0)->nullable();
-            $table->decimal('HC', 4, 0)->nullable();
-            $table->decimal('FL', 4, 0)->nullable();
-            $table->decimal('AC', 4, 0)->nullable();
-            $table->decimal('TM', 6, 2)->nullable();
+            $table->string('CRL', 50)->nullable();
+            $table->string('BPD', 50)->nullable();
+            $table->string('Hem', 50)->nullable();
+            $table->string('OFD', 50)->nullable();
+            $table->string('HC', 50)->nullable();
+            $table->string('FL', 50)->nullable();
+            $table->string('AC', 50)->nullable();
+            $table->string('TM', 50)->nullable();
             
             $table->decimal('NT', 4, 0)->nullable();
-            $table->string('NB', 100)->nullable();            
+            $table->string('NB', 50)->nullable();            
             $table->string('FMU', 100)->nullable();
             $table->string('PKDV', 100)->nullable();
             $table->string('TSR', 100)->nullable();
@@ -45,14 +45,14 @@ class CreateExaminationsTable extends Migration {
             $table->string('AK_PAL')->nullable();
             
             //Second spec controll
-            $table->decimal('Va', 4, 0)->nullable();
-            $table->decimal('Vp', 4, 0)->nullable();
-            $table->decimal('IOD', 4, 0)->nullable();
-            $table->decimal('TCD', 4, 0)->nullable();
-            $table->decimal('CM', 4, 0)->nullable();
-            $table->decimal('NN', 4, 0)->nullable();
-            $table->decimal('HL', 4, 0)->nullable();
-            $table->decimal('cerviks', 4, 0)->nullable();
+            $table->string('Va', 50)->nullable();
+            $table->string('Vp', 50)->nullable();
+            $table->string('IOD', 50)->nullable();
+            $table->string('TCD', 50)->nullable();
+            $table->string('CM', 50)->nullable();
+            $table->string('NN', 50)->nullable();
+            $table->string('HL', 50)->nullable();
+            $table->string('cerviks', 50)->nullable();
             
             $table->string('Ins_pos')->nullable();
             $table->string('Pupil')->nullable();

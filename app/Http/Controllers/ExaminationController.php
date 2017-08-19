@@ -131,16 +131,16 @@ class ExaminationController extends Controller {
      */
     public function storeca1(Request $request, $patient_id) {
         $this->validate($request, array(
-            'CRL' => 'sometimes|numeric',
-            'BPD' => 'sometimes|numeric',
-            'Hem' => 'sometimes|numeric',
-            'OFD' => 'sometimes|numeric',
-            'HC' => 'sometimes|numeric',
-            'FL' => 'sometimes|numeric',
-            'AC' => 'sometimes|numeric',
-            'TM' => 'sometimes|numeric',
+            'CRL' => 'sometimes|max:50',
+            'BPD' => 'sometimes|max:50',
+            'Hem' => 'sometimes|max:50',
+            'OFD' => 'sometimes|max:50',
+            'HC' => 'sometimes|max:50',
+            'FL' => 'sometimes|max:50',
+            'AC' => 'sometimes|max:50',
+            'TM' => 'sometimes|max:50',
             'NT' => 'sometimes|numeric',
-            'NB' => 'sometimes|max:100',
+            'NB' => 'sometimes|max:50',
             'FMU' => 'sometimes|max:100',
             'PKDV' => 'sometimes|max:100',
             'TSR' => 'sometimes|max:100',
@@ -148,6 +148,8 @@ class ExaminationController extends Controller {
             'AFI' => 'sometimes|max:100',
             'Ins_tro' => 'sometimes|max:100',
             'FD' => 'sometimes|max:100',
+            'Viewed' => 'sometimes|max:255',
+            'Freetext' => 'sometimes|max:255',
             'AK_PAL' => 'sometimes|max:255',
             'diagnosis' => 'sometimes|max:255',
             'therapy' => 'sometimes|max:255'
@@ -180,6 +182,8 @@ class ExaminationController extends Controller {
         $examination->AFI = $request->AFI;
         $examination->Ins_tro = $request->Ins_tro;
         $examination->FD = $request->FD;
+        $examination->Viewed = $request->Viewed;
+        $examination->Freetext = $request->Freetext;
         $examination->AK_PAL = $request->AK_PAL;
         $examination->diagnosis = $request->diagnosis;
         $examination->therapy = $request->therapy;
@@ -213,28 +217,30 @@ class ExaminationController extends Controller {
     public function storeca2(Request $request, $patient_id) {
 
         $this->validate($request, array(
-            'BPD' => 'sometimes|numeric',
-            'Hem' => 'sometimes|numeric',
-            'OFD' => 'sometimes|numeric',
-            'HC' => 'sometimes|numeric',
-            'Va' => 'sometimes|numeric',
-            'Vp' => 'sometimes|numeric',
-            'IOD' => 'sometimes|numeric',
-            'TCD' => 'sometimes|numeric',
-            'CM' => 'sometimes|numeric',
-            'NN' => 'sometimes|numeric',
-            'NB' => 'sometimes|max:100',
-            'HL' => 'sometimes|numeric',
-            'FL' => 'sometimes|numeric',
-            'AC' => 'sometimes|numeric',
-            'TM' => 'sometimes|numeric',
+            'BPD' => 'sometimes|max:50',
+            'Hem' => 'sometimes|max:50',
+            'OFD' => 'sometimes|max:50',
+            'HC' => 'sometimes|max:50',
+            'Va' => 'sometimes|max:50',
+            'Vp' => 'sometimes|max:50',
+            'IOD' => 'sometimes|max:50',
+            'TCD' => 'sometimes|max:50',
+            'CM' => 'sometimes|max:50',
+            'NN' => 'sometimes|max:50',
+            'NB' => 'sometimes|max:50',
+            'HL' => 'sometimes|max:50',
+            'FL' => 'sometimes|max:50',
+            'AC' => 'sometimes|max:50',
+            'TM' => 'sometimes|max:50',
             'FHR' => 'sometimes|numeric',
-            'cerviks' => 'sometimes|numeric',
+            'cerviks' => 'sometimes|max:50',
             'Ins_pos' => 'sometimes|max:255',
             'AFI' => 'sometimes|max:100',
             'Pupil' => 'sometimes|max:255',
             'Fo' => 'sometimes|numeric',
             'FD' => 'sometimes|max:100',
+            'Viewed' => 'sometimes|max:255',
+            'Freetext' => 'sometimes|max:255',
             'Ex_Fe_Ha' => 'sometimes|max:255',
             'Width_of_aorta' => 'sometimes|numeric',
             'Pul_tree' => 'sometimes|numeric',
@@ -274,6 +280,8 @@ class ExaminationController extends Controller {
         $examination->Pupil = $request->Pupil;
         $examination->Fo = $request->Fo;
         $examination->FD = $request->FD;
+        $examination->Viewed = $request->Viewed;
+        $examination->Freetext = $request->Freetext;
         $examination->Ex_Fe_Ha = $request->Ex_Fe_Ha;
         $examination->Width_of_aorta = $request->Width_of_aorta;
         $examination->Pul_tree = $request->Pul_tree;

@@ -51,7 +51,7 @@
         <hr>
 
         <div class="col-md-12 background-colorr">
-            
+
             <h6><strong>Biometrija ploda :mm</strong></h6>
             <h6>
                 <strong>
@@ -66,7 +66,7 @@
 
 
         <div class="col-md-12">
-            
+
             <h5><strong>
                     NT : {{$examination->NT}} mm <br>
                     Nosna kost : {{$examination->NB}} <br>
@@ -75,21 +75,40 @@
                     TRIKUSPIDALNA REGURGITACIJA : {{$examination->TSR}}</strong></h5>
         </div>
 
+        <!--        <div>
+                    <hr>
+                    <p><strong class="background-colorr">Sagledani su:</strong> očna sočiva, kontinuitet prednjeg trbušnog zida i dijafragme,
+                        želudac, mokraćna bešika. Kranijum, kičmeni stub, ekstremiteti deluju uredno.
+                        <strong>FHR+ {{$examination->FHR}} /min </strong>pokreti ploda. 
+                        Sagledan četvorošupljinski presek srca. <strong>Insercija trofoblasta:</strong> {{$examination->Ins_tro}}, 
+                        <strong>Količina plodove tečnost: </strong>{{$examination->AFI}}, 
+                        <strong>Dinamika pokreta ploda: </strong>{{$examination->FD}}.</p>
+                    <p> Molim, uraditi free beta 
+                        HCG i PAPP-A. Kontrola sa nalazima. </p>            
+                </div>  -->
+
         <div>
             <hr>
-            <p><strong>Sagledani su:</strong> očna sočiva, kontinuitet prednjeg trbušnog zida i dijafragme,
-                želudac, mokraćna bešika. Kranijum, kičmeni stub, ekstremiteti deluju uredno.
-                <strong>FHR+ {{$examination->FHR}} /min </strong>pokreti ploda. 
-                Sagledan četvorošupljinski presek srca. <strong>Insercija trofoblasta:</strong> {{$examination->Ins_tro}}, 
-                <strong>Količina plodove tečnost: </strong>{{$examination->AFI}}, 
-                <strong>Dinamika pokreta ploda: </strong>{{$examination->FD}}. Molim, uraditi free beta 
-                HCG i PAPP-A. Kontrola sa nalazima. </p>            
-        </div>  
+            <p>
+                <strong class="background-colorr">Sagledani su:</strong>{{$examination->Viewed}}
+                <strong>FHR+ {{$examination->FHR}} /min </strong>pokreti ploda.
+                @if($examination->Ins_tro==null)
+                @else
+                <strong>Insercija trofoblasta:</strong> {{$examination->Ins_tro}},@endif
+                @if($examination->AFI==null)
+                @else
+                <strong>Količina plodove tečnost: </strong>{{$examination->AFI}},@endif
+                @if($examination->FD==null)
+                @else
+                <strong>Dinamika pokreta ploda: </strong>{{$examination->FD}}.@endif
+            </p>
+            <p> {{$examination->Freetext}}</p>            
+        </div>
 
 
         <div class="col-md-12">
             <div class="col-md-3">
-                <h5><strong>Akušerski palpatorni pregled:</strong></h5>            
+                <h5 class="background-colorr"><strong>Akušerski palpatorni pregled:</strong></h5>            
             </div>
             <div class="col-md-9">
                 <h5>{{$examination->AK_PAL}}</h5>            
@@ -98,7 +117,7 @@
 
         <div class="col-md-12">
             <div class="col-md-3">
-                <h5><strong>Dijagnoza:</strong></h5>            
+                <h5 class="background-colorr"><strong>Dijagnoza:</strong></h5>            
             </div>
             <div class="col-md-9">
                 <h5>{{$examination->diagnosis}}</h5>            
@@ -107,7 +126,7 @@
 
         <div class="col-md-12">
             <div class="col-md-3">            
-                <h5><strong>Terapija:</strong></h5>         
+                <h5 class="background-colorr"><strong>Terapija:</strong></h5>         
             </div>
             <div class="col-md-9">            
                 <h5>{{$examination->therapy}}</h5>
@@ -137,7 +156,7 @@
                     poremećaja u kasnoj gestaciji. Pregled fetalnog srca i detaljan ultrazvučni pregled može se 
                     uraditi na klinici za ginekologiju i akušerstvo u Novom Sadu,
                     od 20. do 28. nedelje gestacije. Dalji pregled fetalnog srca 
-                    je moguć na pedijatrijskoj klinici u tiršovoj ulici u Beogradu, 
+                    je moguć na pedijatrijskoj klinici u Tiršovoj ulici u Beogradu, 
                     tel: 011 / 20 - 60 - 680
                 </small>
             </h5>
