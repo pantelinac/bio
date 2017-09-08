@@ -23,7 +23,9 @@ class ExaminationController extends Controller {
      */
     public function create($patient_id) {
         $patient = Patient::find($patient_id);
-        return view('examination.create')->withPatient($patient);
+        $text = "neki tekst";
+        $text1 = "neki tekst novi";
+        return view('examination.create')->withPatient($patient)->withText($text)->withText1($text1);
     }
 
     /**
@@ -297,6 +299,6 @@ class ExaminationController extends Controller {
         Session::flash('success', 'Izveštaj uspešno sačuvan!');
 
         return redirect()->route('patient.show', $patient->id);
-    }
+    }   
 
 }
