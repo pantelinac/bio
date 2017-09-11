@@ -52,6 +52,8 @@
                         <li><a href="{{ url('/users/create') }}">Novi zaposleni</a></li>
                         <li><a href="{{ url('/users') }}">Zaposleni</a></li>
                         <li role="separator" class="divider"></li>
+                        <li><a href="{{ url('/patern') }}">Šabloni</a></li>
+                        <li role="separator" class="divider"></li>
                         @endif
 
                         <li><a href="{{ url('/logout') }}">Odjavi se</a></li>

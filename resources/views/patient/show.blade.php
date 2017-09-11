@@ -57,7 +57,7 @@
             <hr>
             <div class="col-md-2">
                 {{ Form::open(['route' => ['patient.destroy', $patient->id], 'method'=>'DELETE']) }}
-                {{ Form::submit('Delete', ['class'=>'btn btn-default btn-sm btn-danger']) }}
+                {{ Form::submit('Obriši', ['class'=>'btn btn-default btn-sm btn-danger']) }}
                 {{ Form::close() }}
             </div>
             <!--            <h3><a href="{{ route('patient.destroy', $patient->id) }}" 
@@ -67,31 +67,31 @@
 
         <div class="col-md-7 h5">
 
-            {{ $patient->date_of_birth    }} 
+            {{ $patient->date_of_birth    }}
             <hr>
-            {{ $patient->address }}         
+            {{ $patient->address }}.      
             <hr>
-            {{ $patient->place   }}         
+            {{ $patient->place   }}.         
             <hr>
-            {{ $patient->phone   }} 
+            {{ $patient->phone   }}. 
             <hr>
-            {{ $patient->profession  }}     
+            {{ $patient->profession  }}.     
             <hr>
-            {{ $patient->drug_susceptibility}} 
+            {{ $patient->drug_susceptibility}}. 
             <hr>
-            {{ $patient->personal_anament   }}  
+            {{ $patient->personal_anament   }}.  
             <hr>
-            {{ $patient->family_anament}} 
+            {{ $patient->family_anament}}. 
             <hr>
-            {{  $patient->date_last_period  }}
+            {{  $patient->date_last_period  }}.
             <hr>
-            {{   $patient->blood_type      }}   
+            {{   $patient->blood_type      }}.   
             <hr>
-            {{ $patient->rh            }} 
+            {{ $patient->rh            }}. 
             <hr>
-            {{ $patient->childbirth     }} 
+            {{ $patient->childbirth     }}. 
             <hr>
-            {{  $patient->abortion }}       
+            {{  $patient->abortion }}.       
             <hr>
         </div>
 
@@ -112,31 +112,40 @@
             <tbody>
                 @foreach($patient->examinations as $examination)
                 <tr>                    
-                    <td>{{ date('j M Y  G:i', strtotime($examination->created_at)) }}</td>
                     <td>
-                        
-                    @if ($examination->Exam_type === 'OP')
-                            <a href="{{ route('examination.show', $examination->id) }}" 
-                               class="btn btn-default btn-sm btn-info">{{ $examination->Exam_type }}</a>
-                    @elseif ($examination->Exam_type === 'EUZ1')
-                            <a href="{{ route('examination.showca1', $examination->id) }}" 
-                               class="btn btn-default btn-sm btn-info">{{ $examination->Exam_type }}</a>
-                    @elseif ($examination->Exam_type === 'EUZ2')
-                            <a href="{{ route('examination.showca2', $examination->id) }}" 
-                               class="btn btn-default btn-sm btn-info">{{ $examination->Exam_type }}</a>
-                    @else
-                            <a href="{{ route('patient.index') }}" 
-                               class="btn btn-default btn-sm btn-info"></a>
-                    @endif
-                        
+                        @if($examination->created_at == null)
+                        {{$examination->date}}
+                        @else
+                        {{ date('j M Y  G:i', strtotime($examination->created_at)) }}
+                        @endif
                     </td>
-                        
-                                                                      
+                    <td>
+
+                        @if ($examination->Exam_type === 'OP')
+                        <a href="{{ route('examination.show', $examination->id) }}" 
+                           class="btn btn-default btn-sm btn-info">{{ $examination->Exam_type }}</a>
+                        @elseif ($examination->Exam_type === 'EUZ1')
+                        <a href="{{ route('examination.showca1', $examination->id) }}" 
+                           class="btn btn-default btn-sm btn-info">{{ $examination->Exam_type }}</a>
+                        @elseif ($examination->Exam_type === 'EUZ2')
+                        <a href="{{ route('examination.showca2', $examination->id) }}" 
+                           class="btn btn-default btn-sm btn-info">{{ $examination->Exam_type }}</a>
+                        @elseif ($examination->Exam_type === 'STP')
+                        <a href="{{ route('examination.showold', $examination->id) }}" 
+                           class="btn btn-default btn-sm btn-info">{{ $examination->Exam_type }}</a>
+                        @else
+                        <a href="{{ route('patient.index') }}" 
+                           class="btn btn-default btn-sm btn-info"></a>
+                        @endif
+
+                    </td>
+
+
 
                     <td>
 
                         {{ Form::open(['route' => ['examination.destroy', $examination->id], 'method'=>'DELETE']) }}
-                        {{ Form::submit('Delete', ['class'=>'btn btn-default btn-sm btn-danger']) }}
+                        {{ Form::submit('Obriši', ['class'=>'btn btn-default btn-sm btn-danger']) }}
                         {{ Form::close() }}
 
                     </td>

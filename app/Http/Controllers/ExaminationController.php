@@ -9,6 +9,7 @@ use App\User;
 use App\Patient;
 use App\Examination;
 use Session;
+use App\Patern;
 
 class ExaminationController extends Controller {
 
@@ -23,9 +24,18 @@ class ExaminationController extends Controller {
      */
     public function create($patient_id) {
         $patient = Patient::find($patient_id);
-        $text = "neki tekst";
-        $text1 = "neki tekst novi";
-        return view('examination.create')->withPatient($patient)->withText($text)->withText1($text1);
+        
+        $patern = Patern::where('id', 1)->first();
+        $patern2 = Patern::where('id', 2)->first();
+        $patern3 = Patern::where('id', 3)->first();
+        $patern4 = Patern::where('id', 4)->first();
+        $patern5 = Patern::where('id', 5)->first();
+        
+        
+        
+        return view('examination.create')->withPatient($patient)->withPatern($patern)
+                ->withPatern2($patern2)->withPatern3($patern3)->withPatern4($patern4)
+                ->withPatern5($patern5);
     }
 
     /**
@@ -96,6 +106,13 @@ class ExaminationController extends Controller {
         $examination = Examination::find($id);
 
         return view('examination.showca2')->withExamination($examination);
+    }
+        public function showold($id) {
+        $examination = Examination::find($id);
+
+        $patient = $examination->patient->id;
+
+        return view('examination.showold')->withExamination($examination);
     }
 
     /**

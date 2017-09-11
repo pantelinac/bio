@@ -42,7 +42,6 @@
                 <th>Osetljivost na lekove</th>
                 <th>Porođaj</th>
                 <th>Abortus</th>
-                <th>Datum upisa</th>
                 <th></th>
                 </thead>
 
@@ -68,8 +67,7 @@
                         <th>{{ $patient->childbirth }}</th>
                         <th>{{ $patient->abortion }}</th>
 
-
-                        <td>{{ date('j M Y  G:i', strtotime($patient->created_at)) }}</td>
+                        
                         <td><a 
                                 href="{{ route('patient.edit', $patient->id) }}" 
                                 class="btn btn-default btn-sm btn-warning">Izmeni</a></td>
@@ -94,4 +92,3 @@
     @section('scripts')
     {!! Html::script('js/parsley.min.js') !!}
     @endsection
-

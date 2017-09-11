@@ -12,7 +12,7 @@ class AddUserIdToPatient extends Migration
      */
     public function up()
     {
-        Schema::table('patients', function (Blueprint $table) {
+Schema::table('patients', function (Blueprint $table) {
             $table->integer('user_id')->nullable()->after('date_last_period')->unsigned();
         });
     }

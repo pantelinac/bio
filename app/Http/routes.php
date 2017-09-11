@@ -41,6 +41,7 @@ Route::group(['prefix' => 'examination/'], function() {
 Route::get('{examination_id}/op', ['uses' => 'ExaminationController@show', 'as' => 'examination.show']);
 Route::get('{examination_id}/ca1', ['uses' => 'ExaminationController@showca1', 'as' => 'examination.showca1']);
 Route::get('{examination_id}/ca2', ['uses' => 'ExaminationController@showca2', 'as' => 'examination.showca2']);
+Route::get('{examination_id}/old', ['uses' => 'ExaminationController@showold', 'as' => 'examination.showold']);
 });
 
 
@@ -60,3 +61,8 @@ Route::get('users/create', ['uses' => 'UserController@create', 'as' => 'users.cr
 Route::post('users', ['uses' => 'UserController@store', 'as' => 'users.post']);
 Route::get('users', ['uses' => 'UserController@index', 'as' => 'users.index']);
 Route::delete('users/{user_id}', ['uses' => 'UserController@destroy', 'as' => 'users.destroy']);
+
+//Patern
+Route::resource('patern', 'PaternController', ['only' => [
+    'index', 'edit', 'update' 
+]]);

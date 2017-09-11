@@ -60,7 +60,7 @@
         <button id="btn3">3</button>
         <button id="btn4">4</button>
         <button id="btn5">5</button>
-        {{$text}}
+
     </div>
 </div>
 
@@ -69,25 +69,42 @@
 @section('scripts')
 {!! Html::script('js/parsley.min.js') !!}
 <script>
-    confirm('Welome for the first time on my blog!');
 
     $(document).ready(function () {
         $("#btn1").click(function () {
-            $("#test1").val("{{$text}}");
-            $("#test2").val("{{$text1}}");
-            $("#test3").val("Ovo je treća kolona!");
-            $("#test4").val("Ovo je četvrta kolona!");
-            $("#test5").val("Ovo je peta kolona!");
+            $("#test1").val("{{$patern->ultrasonographic_finding}}");
+            $("#test2").val("{{$patern->speculators_finding}}");
+            $("#test3").val("{{$patern->gin_palp_finding}}");
+            $("#test4").val("{{$patern->diagnosis}}");
+            $("#test5").val("{{$patern->therapy}}");
         });
         $("#btn2").click(function () {
-            $("#test3").val("Ovo je treća kolona!");
+            $("#test1").val("{{$patern2->ultrasonographic_finding}}");
+            $("#test2").val("{{$patern2->speculators_finding}}");
+            $("#test3").val("{{$patern2->gin_palp_finding}}");
+            $("#test4").val("{{$patern2->diagnosis}}");
+            $("#test5").val("{{$patern2->therapy}}");
         });
         $("#btn3").click(function () {
-            $("#test3").val("Ovo je treća kolona!");
-            $("#test5").val("Ovo je peta kolona!");
+            $("#test1").val("{{$patern3->ultrasonographic_finding}}");
+            $("#test2").val("{{$patern3->speculators_finding}}");
+            $("#test3").val("{{$patern3->gin_palp_finding}}");
+            $("#test4").val("{{$patern3->diagnosis}}");
+            $("#test5").val("{{$patern3->therapy}}");
+        });
+        $("#btn4").click(function () {
+            $("#test1").val("{{$patern4->ultrasonographic_finding}}");
+            $("#test2").val("{{$patern4->speculators_finding}}");
+            $("#test3").val("{{$patern4->gin_palp_finding}}");
+            $("#test4").val("{{$patern4->diagnosis}}");
+            $("#test5").val("{{$patern4->therapy}}");
         });
         $("#btn5").click(function () {
-            $("#test2").val("Ovo je druga kolona!");
+            $("#test1").val("{{$patern5->ultrasonographic_finding}}");
+            $("#test2").val("{{$patern5->speculators_finding}}");
+            $("#test3").val("{{$patern4->gin_palp_finding}}");
+            $("#test4").val("{{$patern5->diagnosis}}");
+            $("#test5").val("{{$patern5->therapy}}");
 
         });
     });

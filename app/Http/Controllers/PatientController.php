@@ -31,8 +31,11 @@ class PatientController extends Controller {
         $user = Auth::id();
         $patients = Patient::where('user_id', '=',$user)->orderBy('id', 'desc')->paginate(15);
 //        $patients = Patient::orderBy('id', 'desc')->paginate(10);
+        
 
-        return view('patient.index')->withPatients($patients);
+          
+return view('patient.index')->withPatients($patients);
+        
     }
 
     /**
@@ -55,19 +58,19 @@ class PatientController extends Controller {
         //validate the data
         $this->validate($request, array(
             'name' => 'required|max:50',
-            'date_of_birth' => 'required|max:25',
-            'address' => 'required|max:50',
-            'place' => 'required|max:30',
-            'phone' => 'required|max:30',
-            'profession' => 'required|max:50',
-            'drug_susceptibility' => 'required|max:255',
-            'personal_anament' => 'required|max:255',
-            'family_anament' => 'required|max:255',
-            'date_last_period' => 'required|max:25',
-            'blood_type' => 'required|max:2',
-            'rh' => 'required|max:2',
-            'childbirth' => 'required|max:30|numeric',
-            'abortion' => 'required|max:30|numeric'
+            'date_of_birth' => 'sometimes|max:25',
+            'address' => 'sometimes|max:50',
+            'place' => 'sometimes|max:30',
+            'phone' => 'sometimes|max:30',
+            'profession' => 'sometimes|max:50',
+            'drug_susceptibility' => 'sometimes|max:255',
+            'personal_anament' => 'sometimes|max:255',
+            'family_anament' => 'sometimes|max:255',
+            'date_last_period' => 'sometimes|max:25',
+            'blood_type' => 'sometimes|max:2',
+            'rh' => 'sometimes|max:2',
+            'childbirth' => 'sometimes|max:30|numeric',
+            'abortion' => 'sometimes|max:30|numeric'
         ));
 
         $user = Auth::id();
