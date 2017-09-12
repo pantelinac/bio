@@ -57,6 +57,7 @@
                 {{$examination->ultrasonographic_finding5}}
                 {{$examination->ultrasonographic_finding6}}
                 {{$examination->ultrasonographic_finding7}}
+                <br><br><br><br>
                 </h4>           
             </div>
         </div>
@@ -69,7 +70,8 @@
                 <h4>{{$examination->speculators_finding}}
                 {{$examination->speculators_finding2}}
                 {{$examination->speculators_finding3}}
-                {{$examination->speculators_finding4}}</h4>            
+                {{$examination->speculators_finding4}}
+                <br><br><br>           
             </div>
         </div>
 
@@ -84,6 +86,7 @@
                     {{$examination->gin_palp_finding4}}
                     {{$examination->gin_palp_finding5}}
                     {{$examination->gin_palp_finding6}}
+                    <br><br><br>
                 </h4>            
             </div>
         </div>
@@ -96,6 +99,7 @@
                 <h4>{{$examination->diagnosis}}
                 {{$examination->diagnosis2}}
                 {{$examination->diagnosis3}}
+                <br><br><br>
                 </h4>            
             </div>
         </div>
@@ -116,7 +120,8 @@
         <br>
         <div class="visible-print-block">          
             <h6 class="text-left">Novi Sad,</h6>              
-           
+           <h6>{{$examination->date}}</h6>
+           <h6 class="text-right">{{Auth::user()->name}}</h6>
         </div>
 
     </div>

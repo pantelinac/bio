@@ -63,15 +63,6 @@
 
         </div>
 
-        <!--        <div class="col-md-12">
-                    <p><strong class="background-colorr">Sagledani su: </strong>Očna sočiva, kontinuitet prednjeg trbušnog zida i 
-                        dijafragme, pluća, želudac, GIT, mokraćna bešika, bubrezi. 
-                        Kranijum, lice, vrat, kičmeni stub i ekstremiteti deluju uredno.
-                        <strong>Insercija posteljice: </strong>{{$examination->Ins_pos}} , 
-                        <strong>Količina plodove tečnosti: </strong>{{$examination->AFI}} ,                 
-                        <strong>Pupčanik: </strong>{{$examination->Pupil}} ,
-                        <strong>Dinamika pokreta ploda: </strong>{{$examination->FD}}</p>
-                </div>-->
 
         <div class="col-md-12">
             <p><strong class="background-colorr">Sagledani su: </strong>{{$examination->Viewed}}
@@ -110,6 +101,7 @@
                 Protok kroz valvule laminaran.
             </p>
         </div>
+        
 
         <div class="col-md-12">
             <div class="col-md-3">

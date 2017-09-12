@@ -25,7 +25,7 @@
             <h5>Datum rođenja: <strong>{{$examination->patient->date_of_birth}}</strong></h5>
             <h5>Adresa: <strong>{{$examination->patient->address}}, 
                     {{$examination->patient->place}}</strong></h5>
-            <h5>Krvna grupa i RH faktor: <strong>{{$examination->patient->blood_type}}, 
+            <h5>Krvna grupa i RH faktor: <strong>{{$examination->patient->blood_type}}  
                     {{$examination->patient->rh}}</strong></h5>
             <h5>Osetljivost na lekove: <strong>{{$examination->patient->drug_susceptibility}}</strong></h5>
             <h5>PM: <strong>{{$examination->patient->date_last_period}}</strong></h5>
@@ -50,7 +50,10 @@
                 <h4 class="background-colorr"><strong>Ultrasonografski nalaz:</strong></h4>            
             </div>
             <div class="col-md-9">            
-                <h4>{{$examination->ultrasonographic_finding}}</h4>           
+                <h4>
+                    {{$examination->ultrasonographic_finding}}
+                    <br><br><br><br>
+                </h4>           
             </div>
         </div>
         
@@ -59,7 +62,10 @@
                 <h4 class="background-colorr"><strong>Nalaz u spekulima:</strong></h4>            
             </div>        
             <div class="col-md-9">           
-                <h4>{{$examination->speculators_finding}}</h4>            
+                <h4>
+                    {{$examination->speculators_finding}}
+                <br><br><br><br>
+                </h4>            
             </div>
         </div>
 
@@ -68,7 +74,10 @@
                 <h4 class="background-colorr"><strong>Ginekološki Palpatorni pregled:</strong></h4>            
             </div>
             <div class="col-md-9"> 
-                <h4>{{$examination->gin_palp_finding}}</h4>            
+                <h4>
+                    {{$examination->gin_palp_finding}}
+                    <br><br><br><br>
+                </h4>            
             </div>
         </div>
 
@@ -77,7 +86,10 @@
                 <h4 class="background-colorr"><strong>Dijagnoza:</strong></h4>            
             </div>
             <div class="col-md-9">
-                <h4>{{$examination->diagnosis}}</h4>            
+                <h4>
+                    {{$examination->diagnosis}}
+                    <br><br><br><br>
+                </h4>            
             </div>
         </div>
 

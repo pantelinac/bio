@@ -24,18 +24,18 @@ class ExaminationController extends Controller {
      */
     public function create($patient_id) {
         $patient = Patient::find($patient_id);
-        
+
         $patern = Patern::where('id', 1)->first();
         $patern2 = Patern::where('id', 2)->first();
         $patern3 = Patern::where('id', 3)->first();
         $patern4 = Patern::where('id', 4)->first();
         $patern5 = Patern::where('id', 5)->first();
-        
-        
-        
+
+
+
         return view('examination.create')->withPatient($patient)->withPatern($patern)
-                ->withPatern2($patern2)->withPatern3($patern3)->withPatern4($patern4)
-                ->withPatern5($patern5);
+                        ->withPatern2($patern2)->withPatern3($patern3)->withPatern4($patern4)
+                        ->withPatern5($patern5);
     }
 
     /**
@@ -78,6 +78,7 @@ class ExaminationController extends Controller {
         Session::flash('success', 'Izveštaj uspešno sačuvan!');
 
         return redirect()->route('patient.show', $patient->id);
+//        return redirect()->route('examination.show', $examination->id);
     }
 
     /**
@@ -107,12 +108,14 @@ class ExaminationController extends Controller {
 
         return view('examination.showca2')->withExamination($examination);
     }
-        public function showold($id) {
+
+    public function showold($id) {
         $examination = Examination::find($id);
 
+        $user = Auth::id();
         $patient = $examination->patient->id;
 
-        return view('examination.showold')->withExamination($examination);
+        return view('examination.showold')->withExamination($examination)->withUser($user);
     }
 
     /**
@@ -215,6 +218,7 @@ class ExaminationController extends Controller {
         Session::flash('success', 'Izveštaj uspešno sačuvan!');
 
         return redirect()->route('patient.show', $patient->id);
+//        return redirect()->route('examination.showca1', $examination->id);
     }
 
     /**
@@ -316,6 +320,7 @@ class ExaminationController extends Controller {
         Session::flash('success', 'Izveštaj uspešno sačuvan!');
 
         return redirect()->route('patient.show', $patient->id);
-    }   
+//        return redirect()->route('examination.showca2', $examination->id);
+    }
 
 }

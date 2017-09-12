@@ -55,11 +55,11 @@
         <br>
         <br>
         <br>
-        <button id="btn1">1</button>
-        <button id="btn2">2</button>
-        <button id="btn3">3</button>
-        <button id="btn4">4</button>
-        <button id="btn5">5</button>
+        <button class="btn" id="btn1">1</button>
+        <button class="btn" id="btn2">2</button>
+        <button class="btn" id="btn3">3</button>
+        <button class="btn" id="btn4">4</button>
+        <button class="btn" id="btn5">5</button>
 
     </div>
 </div>
