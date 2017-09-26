@@ -21,15 +21,15 @@
 
         {{Form::label('ultrasonographic_finding', 'Ultrasonografski nalaz:')}}
         {{Form::textarea('ultrasonographic_finding', null, 
-            array('class'=>'form-control','rows'=>'3','maxlength'=>'255','id'=>"test1"))}}
+            array('class'=>'form-control','rows'=>'5','id'=>"test1"))}}
 
         {{Form::label('speculators_finding', 'Nalaz u spekulima:')}}
         {{Form::textarea('speculators_finding', null, 
-            array('class'=>'form-control','rows'=>'3','maxlength'=>'255','id'=>"test2"))}}
+            array('class'=>'form-control','rows'=>'4','id'=>"test2"))}}
 
         {{Form::label('gin_palp_finding', 'Ginekološki Palpatorni pregled:')}}
         {{Form::textarea('gin_palp_finding', null, 
-            array('class'=>'form-control','rows'=>'3','maxlength'=>'255','id'=>"test3"))}}
+            array('class'=>'form-control','rows'=>'5','id'=>"test3"))}}
 
         {{Form::label('diagnosis', 'Dijagnoza:')}}
         {{Form::textarea('diagnosis', null, 
@@ -60,7 +60,9 @@
         <button class="btn" id="btn3">3</button>
         <button class="btn" id="btn4">4</button>
         <button class="btn" id="btn5">5</button>
-
+        <br>
+        <br>
+        <br>pm:{{$patient->date_last_period}}
     </div>
 </div>
 
@@ -72,43 +74,42 @@
 
     $(document).ready(function () {
         $("#btn1").click(function () {
-            $("#test1").val("{{$patern->ultrasonographic_finding}}");
-            $("#test2").val("{{$patern->speculators_finding}}");
-            $("#test3").val("{{$patern->gin_palp_finding}}");
-            $("#test4").val("{{$patern->diagnosis}}");
-            $("#test5").val("{{$patern->therapy}}");
+            $("#test1").val("{!!$patern->ultrasonographic_finding!!}");
+            $("#test2").val("{!!$patern->speculators_finding!!}");
+            $("#test3").val("{!!$patern->gin_palp_finding!!}");
+            $("#test4").val("{!!$patern->diagnosis!!}");
+            $("#test5").val("{!!$patern->therapy!!}");
         });
         $("#btn2").click(function () {
-            $("#test1").val("{{$patern2->ultrasonographic_finding}}");
-            $("#test2").val("{{$patern2->speculators_finding}}");
-            $("#test3").val("{{$patern2->gin_palp_finding}}");
-            $("#test4").val("{{$patern2->diagnosis}}");
-            $("#test5").val("{{$patern2->therapy}}");
+            $("#test1").val("{!!$patern2->ultrasonographic_finding!!}");
+            $("#test2").val("{!!$patern2->speculators_finding!!}");
+            $("#test3").val("{!!$patern2->gin_palp_finding!!}");
+            $("#test4").val("{!!$patern2->diagnosis!!}");
+            $("#test5").val("{!!$patern2->therapy!!}");
         });
         $("#btn3").click(function () {
-            $("#test1").val("{{$patern3->ultrasonographic_finding}}");
-            $("#test2").val("{{$patern3->speculators_finding}}");
-            $("#test3").val("{{$patern3->gin_palp_finding}}");
-            $("#test4").val("{{$patern3->diagnosis}}");
-            $("#test5").val("{{$patern3->therapy}}");
+            $("#test1").val("{!!$patern3->ultrasonographic_finding!!}");
+            $("#test2").val("{!!$patern3->speculators_finding!!}");
+            $("#test3").val("{!!$patern3->gin_palp_finding!!}");
+            $("#test4").val("{!!$patern3->diagnosis!!}");
+            $("#test5").val("{!!$patern3->therapy!!}");
         });
         $("#btn4").click(function () {
-            $("#test1").val("{{$patern4->ultrasonographic_finding}}");
-            $("#test2").val("{{$patern4->speculators_finding}}");
-            $("#test3").val("{{$patern4->gin_palp_finding}}");
-            $("#test4").val("{{$patern4->diagnosis}}");
-            $("#test5").val("{{$patern4->therapy}}");
+            $("#test1").val("{!!$patern4->ultrasonographic_finding!!}");
+            $("#test2").val("{!!$patern4->speculators_finding!!}");
+            $("#test3").val("{!!$patern4->gin_palp_finding!!}");
+            $("#test4").val("{!!$patern4->diagnosis!!}");
+            $("#test5").val("{!!$patern4->therapy!!}");
         });
         $("#btn5").click(function () {
-            $("#test1").val("{{$patern5->ultrasonographic_finding}}");
-            $("#test2").val("{{$patern5->speculators_finding}}");
-            $("#test3").val("{{$patern4->gin_palp_finding}}");
-            $("#test4").val("{{$patern5->diagnosis}}");
-            $("#test5").val("{{$patern5->therapy}}");
+            $("#test1").val("{!!$patern5->ultrasonographic_finding!!}");
+            $("#test2").val("{!!$patern5->speculators_finding!!}");
+            $("#test3").val("{!!$patern4->gin_palp_finding!!}");
+            $("#test4").val("{!!$patern5->diagnosis!!}");
+            $("#test5").val("{!!$patern5->therapy!!}");
 
         });
     });
 </script>
 @endsection
-
 

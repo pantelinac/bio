@@ -47,9 +47,9 @@ class ExaminationController extends Controller {
     public function store(Request $request, $patient_id) {
         //validate the data
         $this->validate($request, array(
-            'ultrasonographic_finding' => 'sometimes|max:255',
-            'speculators_finding' => 'sometimes|max:255',
-            'gin_palp_finding' => 'sometimes|max:255',
+            'ultrasonographic_finding' => 'sometimes',
+            'speculators_finding' => 'sometimes',
+            'gin_palp_finding' => 'sometimes',
             'diagnosis' => 'sometimes|max:255',
             'therapy' => 'sometimes|max:255'
         ));
@@ -161,7 +161,7 @@ class ExaminationController extends Controller {
             'FL' => 'sometimes|max:50',
             'AC' => 'sometimes|max:50',
             'TM' => 'sometimes|max:50',
-            'NT' => 'sometimes|numeric',
+            'NT' => 'sometimes|max:50',
             'NB' => 'sometimes|max:50',
             'FMU' => 'sometimes|max:100',
             'PKDV' => 'sometimes|max:100',
@@ -170,7 +170,7 @@ class ExaminationController extends Controller {
             'AFI' => 'sometimes|max:100',
             'Ins_tro' => 'sometimes|max:100',
             'FD' => 'sometimes|max:100',
-            'Viewed' => 'sometimes|max:255',
+            'Viewed' => 'sometimes',
             'Freetext' => 'sometimes|max:255',
             'AK_PAL' => 'sometimes|max:255',
             'diagnosis' => 'sometimes|max:255',
@@ -262,7 +262,7 @@ class ExaminationController extends Controller {
             'Pupil' => 'sometimes|max:255',
             'Fo' => 'sometimes|numeric',
             'FD' => 'sometimes|max:100',
-            'Viewed' => 'sometimes|max:255',
+            'Viewed' => 'sometimes',
             'Freetext' => 'sometimes|max:255',
             'Ex_Fe_Ha' => 'sometimes|max:255',
             'Width_of_aorta' => 'sometimes|numeric',

@@ -63,7 +63,7 @@
         <div class='col-md-3 '>
             {{Form::label('NT', 'NT:')}}
             {{Form::text('NT', null, 
-            array('class'=>'form-control','numeric'=>''))}}
+            array('class'=>'form-control','maxlength'=>'50'))}}
 
             {{Form::label('NB', 'NB:')}}
             {{Form::text('NB', null, 
@@ -95,7 +95,7 @@
             {{Form::text('Ins_tro', null, 
             array('class'=>'form-control','maxlength'=>'100'))}}
 
-            {{Form::label('FD', 'Dinamika pom ploda:')}}
+            {{Form::label('FD', 'Dinamika pok ploda:')}}
             {{Form::text('FD', null, 
             array('class'=>'form-control form-spacing-boto','maxlength'=>'100'))}}
 
@@ -107,13 +107,13 @@
         <div>
             {{Form::label('Viewed', 'Sagledani su: ')}}
             {{Form::textarea('Viewed', "očna sočiva, kontinuitet prednjeg trbušnog zida i dijafragme,želudac, mokraćna bešika. Kranijum, kičmeni stub, ekstremiteti deluju uredno.Sagledan četvorošupljinski presek srca. ", 
-            array('class'=>'form-control','rows'=>'1','maxlength'=>'255'))}}    
+            array('class'=>'form-control','rows'=>'1'))}}    
 
             {{Form::label('Freetext', 'Tekst:')}}
             {{Form::textarea('Freetext', "Molim, uraditi free beta HCG i PAPP-A. Kontrola sa nalazima.", 
             array('class'=>'form-control','rows'=>'1','maxlength'=>'255'))}}
 
-            {{Form::label('AK_PAL', 'Akušerski Palpatorni pregled:')}}
+            {{Form::label('AK_PAL', 'Akušerski palpatorni pregled:')}}
             {{Form::textarea('AK_PAL', null, 
             array('class'=>'form-control','rows'=>'1','maxlength'=>'255'))}}
 

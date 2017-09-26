@@ -33,7 +33,7 @@ class CreateExaminationsTable extends Migration {
             $table->string('AC', 50)->nullable();
             $table->string('TM', 50)->nullable();
             
-            $table->decimal('NT', 4, 0)->nullable();
+            $table->decimal('NT', 50)->nullable();
             $table->string('NB', 50)->nullable();            
             $table->string('FMU', 100)->nullable();
             $table->string('PKDV', 100)->nullable();

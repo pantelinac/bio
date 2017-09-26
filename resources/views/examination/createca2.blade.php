@@ -133,7 +133,7 @@
         <div>
             {{Form::label('Viewed', 'Sagledani su:')}}
             {{Form::textarea('Viewed', "Očna sočiva, kontinuitet prednjeg trbušnog zida i dijafragme, pluća, želudac, GIT, mokraćna bešika, bubrezi.Kranijum, lice, vrat, kičmeni stub i ekstremiteti deluju uredno.", 
-            array('class'=>'form-control','rows'=>'1','maxlength'=>'255'))}}    
+            array('class'=>'form-control','rows'=>'1'))}}    
 
             {{Form::label('Freetext', 'Tekst:')}}
             {{Form::textarea('Freetext', null, 

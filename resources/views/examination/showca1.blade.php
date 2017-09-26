@@ -19,7 +19,7 @@
         <h4 class="text-center"><strong>CILJANI AKUŠERSKI ULTRAZVUČNI PREGLED U PRVOM TRIMESTRU TRUDNOĆE</strong></h4>
 
         <br>
-        <h4 class="background-colorr"><small>Prezime i ime: </small><strong>{{$examination->patient->name}}</strong></h4>
+        <h3 class="background-colorr"><small>Prezime i ime: </small><strong>{{$examination->patient->name}}</strong></h3>
         <section class="col-md-6">
             <h6>Broj kartona: <strong>{{$examination->patient->id}}</strong></h6>
             <h6>Datum rođenja: <strong>{{$examination->patient->date_of_birth}}</strong></h6>
@@ -138,7 +138,7 @@
         <br>
         <div class="visible-print-block">          
             <h6 class="text-left">Novi Sad,</h6>
-            <h6>{{$examination->created_at}}</h6>
+            <h6><strong>{{date('j.m.Y   G:i', strtotime($examination->created_at))}}</strong></h6>
             <h6 class="text-right">{{$examination->user->name}}</h6>
 
             <h5>

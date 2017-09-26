@@ -15,10 +15,10 @@
                
         <img  class="center-block visible-print-block" 
               src="{{ asset('images/bio.png') }}" height="100" width="350"/>
-        
+        <br>
         <h4 class="text-center"><strong>NALAZ LEKARA SPECIJALISTE</strong></h4>
         <br>
-        <h4 class="background-colorr"><small>Prezime i ime: </small><strong>{{$examination->patient->name}}</strong></h4>
+        <h3 class="background-colorr"><small>Prezime i ime: </small><strong>{{$examination->patient->name}}</strong></h3>
 
         <div class="col-md-6">
             <h5>Broj kartona: <strong>{{$examination->patient->id}}</strong></h5>
@@ -47,7 +47,7 @@
 
         <div>
             <div class="col-md-3">
-                <h4 class="background-colorr"><strong>Ultrasonografski nalaz:</strong></h4>            
+                <h4><strong>Ultrasonografski nalaz:</strong></h4>            
             </div>
             <div class="col-md-9">            
                 <h4>{{$examination->ultrasonographic_finding}}
@@ -57,27 +57,27 @@
                 {{$examination->ultrasonographic_finding5}}
                 {{$examination->ultrasonographic_finding6}}
                 {{$examination->ultrasonographic_finding7}}
-                <br><br><br><br>
+                <br><br>
                 </h4>           
             </div>
         </div>
         
         <div>
             <div class="col-md-3">            
-                <h4 class="background-colorr"><strong>Nalaz u spekulima:</strong></h4>            
+                <h4><strong>Nalaz u spekulima:</strong></h4>            
             </div>        
             <div class="col-md-9">           
                 <h4>{{$examination->speculators_finding}}
                 {{$examination->speculators_finding2}}
                 {{$examination->speculators_finding3}}
                 {{$examination->speculators_finding4}}
-                <br><br><br>           
+                <br><br>           
             </div>
         </div>
 
         <div>
             <div class="col-md-3">            
-                <h4 class="background-colorr"><strong>Ginekološki Palpatorni pregled:</strong></h4>            
+                <h4><strong>Ginekološki palpatorni pregled:</strong></h4>            
             </div>
             <div class="col-md-9"> 
                 <h4>{{$examination->gin_palp_finding}}
@@ -86,32 +86,33 @@
                     {{$examination->gin_palp_finding4}}
                     {{$examination->gin_palp_finding5}}
                     {{$examination->gin_palp_finding6}}
-                    <br><br><br>
+                    <br><br>
                 </h4>            
             </div>
         </div>
 
         <div>
             <div class="col-md-3">
-                <h4 class="background-colorr"><strong>Dijagnoza:</strong></h4>            
+                <h4><strong>Dijagnoza:</strong></h4>            
             </div>
             <div class="col-md-9">
                 <h4>{{$examination->diagnosis}}
                 {{$examination->diagnosis2}}
                 {{$examination->diagnosis3}}
-                <br><br><br>
+                <br><br>
                 </h4>            
             </div>
         </div>
 
         <div>
             <div class="col-md-3">            
-                <h4 class="background-colorr"><strong>Terapija:</strong></h4>         
+                <h4><strong>Terapija:</strong></h4>         
             </div>
             <div class="col-md-9">            
                 <h4>{{$examination->therapy}}
                 {{$examination->therapy2}}
                 {{$examination->therapy3}}</h4>
+                <br>
             </div>        
         </div>
 
@@ -120,7 +121,7 @@
         <br>
         <div class="visible-print-block">          
             <h6 class="text-left">Novi Sad,</h6>              
-           <h6>{{$examination->date}}</h6>
+           <h6><strong>{{$examination->date}}<strong></h6>
            <h6 class="text-right">{{Auth::user()->name}}</h6>
         </div>
 
